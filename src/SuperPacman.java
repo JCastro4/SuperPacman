@@ -1,4 +1,5 @@
 
-public class SuperPacman {
-
+public class SuperPacman 
+{
+	private String name = "Cesar";
 }
