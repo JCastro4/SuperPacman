@@ -40,7 +40,7 @@ public class Maze extends JFrame
 				repaint();
 
 				//Player movement
-				
+
 				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
 				{
 					p.moveUp();
@@ -103,21 +103,23 @@ public class Maze extends JFrame
 		{
 			for(int x = 0; x < rows; x++)
 			{
-				Tile tile = new Tile(x, y);
+				Tile tile = new Tile(x, y); // Displays green tile for player
 				tile.setSize(panelSize, panelSize);
 				tile.setLocation((x*panelSize)+23, (y*panelSize)+25);
 				if(map[x][y] == 0)
 				{
 					tile.setBackground(Color.GRAY);
-				}else{
+				}
+				else
+				{
 					tile.setBackground(Color.WHITE);
 					tile.setWall(false);
 					if(x == 0)
 					{
-						p.setLocation((x*panelSize)+23, (y*panelSize)+25);
+						p.setLocation((x*panelSize) + 23, (y * panelSize) + 25);
 						p.y = y;
 					}
-					if(x == columns-1)
+					if(x == columns - 1)
 					{
 						endLevelLoc = y;
 					}
@@ -137,7 +139,8 @@ public class Maze extends JFrame
 
 	public void loadMap(String str)
 	{
-		try{
+		try
+		{
 			BufferedReader br = new BufferedReader(new FileReader(str));
 			StringBuilder sb = new StringBuilder();
 			String line = br.readLine();
@@ -156,11 +159,13 @@ public class Maze extends JFrame
 				for(int x = 0; x < rows; x++)
 				{
 					String mapChar = mapStr.substring(counter, counter+1);
-					if(!mapChar.equals("\r\n") && !mapChar.equals("\n")&& !mapChar.equals("\r"))
+					if(!mapChar.equals("\r\n") && !mapChar.equals("\n") && !mapChar.equals("\r"))
 					{//If it's a number
 						//System.out.print(mapChar);
 						map[x][y] = Integer.parseInt(mapChar);
-					}else{//If it is a line break
+					}
+					else
+					{//If it is a line break
 						x--;
 						System.out.print(mapChar);
 					}
