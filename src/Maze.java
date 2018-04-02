@@ -41,19 +41,19 @@ public class Maze extends JFrame
 
 				//Player movement
 				
-				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP)
+				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
 				{
 					p.moveUp();
 				}
-				if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT)
+				if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT || key == KeyEvent.VK_KP_LEFT)
 				{
 					p.moveLeft();
 				}
-				if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN)
+				if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN || key == KeyEvent.VK_KP_DOWN)
 				{
 					p.moveDown();
 				}
-				if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT)
+				if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_KP_RIGHT)
 				{
 					p.moveRight();
 				}
