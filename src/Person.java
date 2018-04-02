@@ -13,6 +13,7 @@ public class Person extends JPanel
 	private int health;
 	private int attack;
 	private int defence;
+	private String name;
 	/**
 	 * @return the health
 	 */

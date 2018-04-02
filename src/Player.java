@@ -1,12 +1,13 @@
 
 import java.awt.Color;
-
-import javax.swing.JPanel;
+import java.util.ArrayList;
 
 
 public class Player extends Person
 {
-	int x, y;
+	protected int x, y;
+	private ArrayList<Items> inventoryList = new ArrayList<Items>(); //ArrayList of items
+	
 	
 
 	public Player() 
