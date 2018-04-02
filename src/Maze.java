@@ -18,7 +18,7 @@ public class Maze extends JFrame
 	public static int panelSize = 15;
 	public static int map[][] = new int[columns][rows];
 	public static int endLevelLoc;
-	Player p;
+	Player player;
 
 	public Maze(String str)
 	{
@@ -43,22 +43,22 @@ public class Maze extends JFrame
 
 				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
 				{
-					p.moveUp();
+					player.moveUp();
 				}
 				if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT || key == KeyEvent.VK_KP_LEFT)
 				{
-					p.moveLeft();
+					player.moveLeft();
 				}
 				if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN || key == KeyEvent.VK_KP_DOWN)
 				{
-					p.moveDown();
+					player.moveDown();
 				}
 				if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_KP_RIGHT)
 				{
-					p.moveRight();
+					player.moveRight();
 				}
 
-				if(p.x == columns-1 && p.y == endLevelLoc)
+				if(player.x == columns-1 && player.y == endLevelLoc)
 				{
 					JOptionPane.showMessageDialog(null, "Congratulations, you've beaten the level!", "End Game", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
@@ -94,9 +94,9 @@ public class Maze extends JFrame
 		this.setLocationRelativeTo(null);
 
 		//Create player
-		p = new Player();
-		p.setVisible(true);
-		this.add(p);
+		player = new Player();
+		player.setVisible(true);
+		this.add(player);
 
 		//Color map
 		for(int y = 0; y < columns; y++)
@@ -116,8 +116,8 @@ public class Maze extends JFrame
 					tile.setWall(false);
 					if(x == 0)
 					{
-						p.setLocation((x*panelSize) + 23, (y * panelSize) + 25);
-						p.y = y;
+						player.setLocation((x*panelSize) + 23, (y * panelSize) + 25);
+						player.y = y;
 					}
 					if(x == columns - 1)
 					{
