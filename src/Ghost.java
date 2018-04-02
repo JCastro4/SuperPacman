@@ -6,5 +6,21 @@
  */
 public class Ghost extends Person
 {
+	private int accuracy;
 
+	/**
+	 * @return the accuracy
+	 */
+	public int getAccuracy()
+	{
+		return accuracy;
+	}
+
+	/**
+	 * @param accuracy the accuracy to set
+	 */
+	public void setAccuracy(int accuracy)
+	{
+		this.accuracy = accuracy;
+	}
 }
