@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 public class Player extends JPanel
 {
 	int x, y;
+	private int health;
 
 	public Player() 
 	{
