@@ -4,10 +4,10 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 
-public class Player extends JPanel
+public class Player extends Person
 {
 	int x, y;
-	private int health;
+	
 
 	public Player() 
 	{
@@ -17,16 +17,16 @@ public class Player extends JPanel
 
 	public void moveLeft() 
 	{
-		if(x > 0 && Maze.map[x-1][y] == 1)
+		if(x > 0 && Maze.map[x - 1][y] == 1)
 		{
-			this.setLocation(this.getX()-15, this.getY());
+			this.setLocation(this.getX() - 15, this.getY());
 			x--;
 		}
 	}
 
 	public void moveRight() 
 	{
-		if(x < Maze.columns-1 && Maze.map[x+1][y] == 1)
+		if(x < Maze.columns - 1 && Maze.map[x + 1][y] == 1)
 		{
 			this.setLocation(this.getX()+15, this.getY());
 			x++;
@@ -35,18 +35,18 @@ public class Player extends JPanel
 
 	public void moveUp() 
 	{
-		if(y > 0 && Maze.map[x][y-1] == 1)
+		if(y > 0 && Maze.map[x][y - 1] == 1)
 		{
-			this.setLocation(this.getX(), this.getY()-15);
+			this.setLocation(this.getX(), this.getY() - 15);
 			y--;
 		}
 	}
 
 	public void moveDown() 
 	{
-		if(y < Maze.rows-1 && Maze.map[x][y+1] == 1)
+		if(y < Maze.rows - 1 && Maze.map[x][y + 1] == 1)
 		{
-			this.setLocation(this.getX(), this.getY()+15);
+			this.setLocation(this.getX(), this.getY() + 15);
 			y++;
 		}
 	}

@@ -4,6 +4,7 @@
  * Clyde, Inky, Blinky 
  * Each monster has their own stats 
  */
-public class Ghost {
+public class Ghost extends Person
+{
 
 }
