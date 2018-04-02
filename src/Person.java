@@ -12,7 +12,7 @@ public class Person extends JPanel
 {
 	private int health;
 	private int attack;
-	private int defence;
+	private int defense;
 	private String name;
 	/**
 	 * @return the health
@@ -28,4 +28,39 @@ public class Person extends JPanel
 	{
 		this.health = health;
 	}
+	
+	//Edited by Boji Benji 4/2/18
+	/**
+	 * @return the attack
+	 */
+	public int getAttack()
+	{
+		return attack; 
+	}
+	
+	/**
+	 * @param attack to set
+	 */
+	public void setAttack(int attack)
+	{
+		this.attack = attack; 
+	}
+	
+	/**
+	 * @return the defense
+	 */
+	public int getDefense()
+	{
+		return defense; 
+	}
+	
+	/**
+	 * @param defense to set
+	 */
+	public void setDefense(int defense)
+	{
+		this.defense = defense; 
+	}
+	
+	//Might require a update class if user collects more orb's the attack, health, defense will all change. 
 }
