@@ -62,5 +62,10 @@ public class Person extends JPanel
 		this.defense = defense; 
 	}
 	
-	//Might require a update class if user collects more orb's the attack, health, defense will all change. 
+	/*Might require a update class if user collects more orb's the attack, health, defense will all change. 
+	 * Might need deal damage/ receive damage 
+	 * Might need attack command
+	 * Might need run(flee) command 
+	 * Might need examine command 
+	*/
 }
