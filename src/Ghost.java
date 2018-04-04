@@ -17,7 +17,7 @@ public class Ghost extends Person
 	private int accuracy;
 //	private String color;
 //	private String description;
-	Player player = new Player();
+//	Player player = new Player();
 	private String color;
 	private String description;
 	
@@ -68,7 +68,7 @@ public class Ghost extends Person
 	@Override
 	public void dealDamage(int attack)
 	{
-		player.setHealth(player.getHealth() - attack );
+		Player.setHealth(Player.getHealth() - attack );
 		
 	}
 

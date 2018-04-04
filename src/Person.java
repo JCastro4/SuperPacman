@@ -11,23 +11,23 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public abstract class Person extends JPanel
 {
-	private int health;
+	private static int health;
 	private int attack;
 	private int defense;
 	private String name;
 	/**
 	 * @return the health
 	 */
-	public int getHealth()
+	public static int getHealth()
 	{
 		return health;
 	}
 	/**
 	 * @param health the health to set
 	 */
-	public void setHealth(int health)
+	public static void setHealth(int health)
 	{
-		this.health = health;
+		Person.health = health;
 	}
 	
 	//Edited by Boji Benji 4/2/18
