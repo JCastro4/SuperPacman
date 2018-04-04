@@ -11,6 +11,7 @@
  * Each Ghost has a name, color, description, health, attack, defense, and accuracy.
  */
 
+@SuppressWarnings("serial")
 public class Ghost extends Person
 {
 	private int accuracy;
