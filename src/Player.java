@@ -61,7 +61,6 @@ public class Player extends Person
 	public void attack()
 	{
 		dealDamage(getAttack());
-		
 	}
 
 	/* (non-Javadoc)

@@ -81,17 +81,17 @@ public class Ghost extends Person
 		// TODO Auto-generated method stub
 		
 	}
-	public void createGhosts() // 
+	public void createGhosts() // Create Ghosts needed
 	{
-		Ghost Clyde = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost Inky = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost Blinky = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost Pinky = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost ghost = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost ghost0 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost ghost2 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost ghost3 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
-		Ghost ghost4 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost Clyde = new Ghost("Clyde", "orange", description, 75, 60, 40, 40/60);
+		Ghost Inky = new Ghost("Inky", "cyan", description, 75, 60, 40, 40/60);
+		Ghost Blinky = new Ghost("Blinky", "red", color, 75, 60, 40, 40/60);
+		Ghost Pinky = new Ghost("Pinky", "pink", color, 100, 80, 60, 100);
+		Ghost ghost = new Ghost("ghost", "blue", color, 50, 50, 30, 30/70);
+		Ghost ghost1 = new Ghost("ghost1", "blue", color, 50, 50, 30, 30/70);
+		Ghost ghost2 = new Ghost("ghost2", "blue", color, 50, 50, 30, 30/70);
+		Ghost ghost3 = new Ghost("ghost3", "blue", color, 50, 50, 30, 30/70);
+		Ghost ghost4 = new Ghost("ghost4", "blue", color, 50, 50, 30, 30/70);
 		
 	}
 }
