@@ -3,10 +3,12 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
+@SuppressWarnings("serial")
 public class Player extends Person
 {
 	protected int x, y;
 	private ArrayList<Items> inventoryList = new ArrayList<Items>(); //ArrayList of items
+	Ghost ghost = new Ghost();
 	
 	
 
@@ -58,7 +60,7 @@ public class Player extends Person
 	@Override
 	public void attack()
 	{
-		// TODO Auto-generated method stub
+		dealDamage(getAttack());
 		
 	}
 
@@ -66,10 +68,9 @@ public class Player extends Person
 	 * @see Person#dealDamage()
 	 */
 	@Override
-	public void dealDamage()
+	public void dealDamage(int attack)
 	{
-		// TODO Auto-generated method stub
-		
+		ghost.setHealth(ghost.getHealth() - attack);
 	}
 
 	/* (non-Javadoc)

@@ -8,6 +8,7 @@ import javax.swing.JPanel;
  *Apr 2, 2018
  * Purpose
  */
+@SuppressWarnings("serial")
 public abstract class Person extends JPanel
 {
 	private int health;
@@ -63,7 +64,7 @@ public abstract class Person extends JPanel
 	}
 	
 	public abstract void attack();
-	public abstract void dealDamage();
+	public abstract void dealDamage(int attack);
 	public abstract void receiveDamage();
 	
 	/*Might require a update class if user collects more orb's the attack, health, defense will all change. 

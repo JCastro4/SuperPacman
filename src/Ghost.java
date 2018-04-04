@@ -1,3 +1,5 @@
+
+
 /*
  * Main boss: Pinky
  * Other Monsters: Blue Ghost0-4
@@ -8,9 +10,30 @@
  * Deal/ Receive Damage commands
  * Each Ghost has a name, color, description, health, attack, defense, and accuracy.
  */
+
 public class Ghost extends Person
 {
 	private int accuracy;
+//	private String color;
+//	private String description;
+	Player player = new Player();
+	private String color;
+	private String description;
+	
+	public Ghost()
+	{
+		//empty constructor
+	}
+	public Ghost(String name, String color, String description, int health, int attack, int defense, int accuracy)
+	{
+		this.setName(name);
+		this.color = color;
+		this.description = description;
+		this.setHealth(health);
+		this.setAttack(attack);
+		this.setDefense(defense);
+		this.setAccuracy(accuracy);
+	}
 
 	/**
 	 * @return the accuracy
@@ -34,7 +57,7 @@ public class Ghost extends Person
 	@Override
 	public void attack()
 	{
-		// TODO Auto-generated method stub
+		dealDamage(getAttack());
 		
 	}
 
@@ -42,9 +65,9 @@ public class Ghost extends Person
 	 * @see Person#dealDamage()
 	 */
 	@Override
-	public void dealDamage()
+	public void dealDamage(int attack)
 	{
-		// TODO Auto-generated method stub
+		player.setHealth(player.getHealth() - attack );
 		
 	}
 
@@ -55,6 +78,19 @@ public class Ghost extends Person
 	public void receiveDamage()
 	{
 		// TODO Auto-generated method stub
+		
+	}
+	public void createGhosts() // 
+	{
+		Ghost Clyde = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost Inky = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost Blinky = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost Pinky = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost ghost = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost ghost0 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost ghost2 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost ghost3 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
+		Ghost ghost4 = new Ghost(color, color, color, accuracy, accuracy, accuracy, accuracy);
 		
 	}
 }
