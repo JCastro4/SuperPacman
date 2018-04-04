@@ -82,4 +82,20 @@ public class Player extends Person
 		// TODO Auto-generated method stub
 		
 	}
+
+	/**
+	 * @return the inventoryList
+	 */
+	public ArrayList<Items> getInventoryList()
+	{
+		return inventoryList;
+	}
+
+	/**
+	 * @param inventoryList the inventoryList to set
+	 */
+	public void setInventoryList(ArrayList<Items> inventoryList)
+	{
+		this.inventoryList = inventoryList;
+	}
 }
