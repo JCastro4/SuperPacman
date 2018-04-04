@@ -8,7 +8,7 @@ import javax.swing.JPanel;
  *Apr 2, 2018
  * Purpose
  */
-public class Person extends JPanel
+public abstract class Person extends JPanel
 {
 	private int health;
 	private int attack;
@@ -61,6 +61,10 @@ public class Person extends JPanel
 	{
 		this.defense = defense; 
 	}
+	
+	public abstract void attack();
+	public abstract void dealDamage();
+	public abstract void receiveDamage();
 	
 	/*Might require a update class if user collects more orb's the attack, health, defense will all change. 
 	 * Might need deal damage/ receive damage 

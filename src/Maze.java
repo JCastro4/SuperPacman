@@ -39,7 +39,7 @@ public class Maze extends JFrame
 				revalidate();
 				repaint();
 
-				//Player movement
+				//Navigation commands
 
 				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
 				{

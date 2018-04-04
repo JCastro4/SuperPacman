@@ -27,4 +27,34 @@ public class Ghost extends Person
 	{
 		this.accuracy = accuracy;
 	}
+
+	/* (non-Javadoc)
+	 * @see Person#attack()
+	 */
+	@Override
+	public void attack()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see Person#dealDamage()
+	 */
+	@Override
+	public void dealDamage()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see Person#receiveDamage()
+	 */
+	@Override
+	public void receiveDamage()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

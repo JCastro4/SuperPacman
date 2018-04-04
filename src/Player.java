@@ -51,4 +51,34 @@ public class Player extends Person
 			y++;
 		}
 	}
+
+	/* (non-Javadoc)
+	 * @see Person#attack()
+	 */
+	@Override
+	public void attack()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see Person#dealDamage()
+	 */
+	@Override
+	public void dealDamage()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see Person#receiveDamage()
+	 */
+	@Override
+	public void receiveDamage()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }
