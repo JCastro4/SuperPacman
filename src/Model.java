@@ -1,3 +1,5 @@
+import java.util.Observable;
+
 /**
  * 
  */
@@ -7,7 +9,7 @@
  *Apr 4, 2018
  * Purpose
  */
-public class Model
+public class Model extends Observable
 {
 
 }
