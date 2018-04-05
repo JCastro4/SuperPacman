@@ -1,27 +1,51 @@
-/*Puzzle in this game should allows the user to move threw the maze easier (shortcuts) if the user answer the question correctly.
- * Note gives hints to the user.
-*/
-public class Puzzles {
 /**
- * Edited by Boji Benji
+ * Class: Puzzles
+ * 
+ * @author Jose Castro
+ * @author Boji Benji
+ *
+ *	Purpose:
+ *	Puzzle in this game should allows the user to move threw the maze easier
+ *	(shortcuts) if the user answer the question correctly.
+ *	Note gives hints to the user.
  */
+
+public class Puzzles {
 	
-	//Examine puzzle, this would show the description of the puzzle 
-	public void examinePuzzle()
-	{
-		
+	private int puzzleID;
+
+	private String description;
+
+	private String hint;
+
+	private String solution;
+
+	public int getPuzzleID() {
+		return 0;
 	}
-	
-	//This would allow the user to leave the puzzle
-	public void leavePuzzle()
-	{
-		
+
+	public String getDescription() {
+		return null;
 	}
-	
-	
-	//This would ensure that something will happen upon solving the puzzle
-	public void solvePuzzle()
-	{
-		
+
+	public String setDescription() {
+		return null;
 	}
+
+	public String getHint() {
+		return null;
+	}
+
+	public void setHint() {
+
+	}
+
+	public String getSolution() {
+		return null;
+	}
+
+	public void setSolution() {
+
+	}
+
 }
