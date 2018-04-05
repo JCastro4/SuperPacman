@@ -1,22 +1,31 @@
 /**
  * 
+ * @author Jose Castro Last Edited: 4/5/18
+ *
  */
 
-/**
- * @author Cesar Mauricio Romero-Pedraza
- *Apr 4, 2018
- * Purpose
- */
 public class Orb extends Items
 {
 	private int levelIncrement;
-	Player player = new Player();
-	
+
+	public Orb(int itemID, String itemName, String description, int levelIncrement)
+	{
+		super(itemID, itemName, description);
+		this.levelIncrement = levelIncrement;
+	}
+
+	public int getLevelIncrement()
+	{
+		return levelIncrement;
+	}
+
+	public void setLevelIncrement(int levelIncrement)
+	{
+		this.levelIncrement = levelIncrement;
+	}
+
 	public void useOrb()
 	{
-		//Empty for now until we figure out the logic to apply increment.
-		//We are supposed to have a choice of adding to health, attack or defense
-		//If defense the ghost attack level is lowered by 1
+
 	}
-	
 }
