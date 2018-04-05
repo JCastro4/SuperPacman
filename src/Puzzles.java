@@ -11,7 +11,7 @@
  */
 
 public class Puzzles {
-	
+
 	private int puzzleID;
 
 	private String description;
@@ -20,32 +20,53 @@ public class Puzzles {
 
 	private String solution;
 
-	public int getPuzzleID() {
-		return 0;
+	public Puzzles(int puzzleID, String description, String hint, String solution)
+	{
+		super();
+		this.puzzleID = puzzleID;
+		this.description = description;
+		this.hint = hint;
+		this.solution = solution;
 	}
 
-	public String getDescription() {
-		return null;
+	public int getPuzzleID()
+	{
+		return puzzleID;
 	}
 
-	public String setDescription() {
-		return null;
+	public void setPuzzleID(int puzzleID)
+	{
+		this.puzzleID = puzzleID;
 	}
 
-	public String getHint() {
-		return null;
+	public String getDescription()
+	{
+		return description;
 	}
 
-	public void setHint() {
-
+	public void setDescription(String description)
+	{
+		this.description = description;
 	}
 
-	public String getSolution() {
-		return null;
+	public String getHint()
+	{
+		return hint;
 	}
 
-	public void setSolution() {
-
+	public void setHint(String hint)
+	{
+		this.hint = hint;
 	}
 
+	public String getSolution()
+	{
+		return solution;
+	}
+
+	public void setSolution(String solution)
+	{
+		this.solution = solution;
+	}
+	
 }
