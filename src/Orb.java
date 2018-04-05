@@ -1,6 +1,7 @@
 /**
+ * Class: Orb
  * 
- * @author Jose Castro Last Edited: 4/5/18
+ * @author Jose Castro	Last Edited: 4/5/18
  *
  */
 

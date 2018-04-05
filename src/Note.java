@@ -1,13 +1,32 @@
 /**
+ * Class: Note
  * 
+ * @author Jose Castro Last Edited: 4/5/18
+ *
  */
 
-/**
- * @author Cesar Mauricio Romero-Pedraza
- *Apr 4, 2018
- * Purpose
- */
 public class Note extends Items
 {
+	private int noteUsage;
+	
+	public Note(int itemID, String itemName, String description, int noteUsage)
+	{
+		super(itemID, itemName, description);
+		this.noteUsage = noteUsage;
+	}
+	
+	public int getNoteUsage()
+	{
+		return noteUsage;
+	}
 
+	public void setNoteUsage(int noteUsage)
+	{
+		this.noteUsage = noteUsage;
+	}
+
+	public void readNote()
+	{
+
+	}
 }
