@@ -38,9 +38,9 @@ public class Fruit extends Items
 		//Creates a list for fruit objects.
 		ArrayList<Fruit> fruitList = new ArrayList<>();
 		//For loops creates 50 fruit objects and adds them to the list.
-		for(int i = 0; i < 50; i++)
+		for(int i = 0; i < 5; i++)
 		{
-			Fruit fruit = new Fruit(i, "Fruit", "A Yummy fruit.", 5);
+			Fruit fruit = new Fruit(i, "Fruit", "A Yummy fruit.", 10);
 			fruitList.add(fruit);
 		}
 		//returns the list.

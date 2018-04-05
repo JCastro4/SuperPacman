@@ -25,8 +25,8 @@ public class Note extends Items
 		this.noteUsage = noteUsage;
 	}
 
-	public void readNote()
+	public void readNote(Note note)
 	{
-
+		System.out.println(note.getDescription());
 	}
 }

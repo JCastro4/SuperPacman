@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Class: Orb
  * 
@@ -24,9 +26,29 @@ public class Orb extends Items
 	{
 		this.levelIncrement = levelIncrement;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Orb [" + super.toString() +  ", levelIncrement = " + levelIncrement + "]";
+	}
 
+	public static ArrayList<Orb> createOrbs()
+	{
+		//Creates a list for Orb objects.
+		ArrayList<Orb> orbList = new ArrayList<>();
+		//For loops creates 50 Orb objects and adds them to the list.
+		for(int i = 0; i < 100; i++)
+		{
+			Orb orb = new Orb(i, "Orb", "An orb that can increase attack level.", 2);
+			orbList.add(orb);
+		}
+		//returns the list.
+		return orbList;
+	}
+	
 	public void useOrb()
 	{
-
+		//Set player's attack level here.
 	}
 }
