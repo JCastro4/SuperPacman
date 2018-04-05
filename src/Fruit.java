@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Class: Fruit
  * 
@@ -23,6 +25,26 @@ public class Fruit extends Items
 	public void setHealthIncrement(int healthIncrement)
 	{
 		this.healthIncrement = healthIncrement;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Fruit ["+ super.toString() + " healthIncrement= " + healthIncrement + "]";
+	}
+
+	public ArrayList<Fruit> createFruits()
+	{
+		//Creates a list for fruit objects.
+		ArrayList<Fruit> fruitList = new ArrayList<>();
+		//For loops creates 50 fruit objects and adds them to the list.
+		for(int i = 0; i < 50; i++)
+		{
+			Fruit fruit = new Fruit(i, "Fruit", "A Yummy fruit.", 5);
+			fruitList.add(fruit);
+		}
+		//returns the list.
+		return fruitList;
 	}
 	
 	public void consumeFruit()
