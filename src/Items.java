@@ -13,6 +13,14 @@ public class Items
 
 	private String description;
 
+	public Items(int itemID, String itemName, String description)
+	{
+		super();
+		this.itemID = itemID;
+		this.itemName = itemName;
+		this.description = description;
+	}
+
 	public int getItemID()
 	{
 		return 0;
