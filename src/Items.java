@@ -45,4 +45,11 @@ public class Items
 	{
 
 	}
+
+	@Override
+	public String toString()
+	{
+		return "itemID = " + itemID + ", itemName = " + itemName + ", description = " + description;
+	}
+	
 }

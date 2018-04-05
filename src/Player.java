@@ -9,8 +9,6 @@ public class Player extends Person
 	protected int x, y;
 	private ArrayList<Items> inventoryList = new ArrayList<Items>(); //ArrayList of items
 //	Ghost ghost = new Ghost();
-	
-	
 
 	public Player() 
 	{

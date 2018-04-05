@@ -30,10 +30,10 @@ public class Fruit extends Items
 	@Override
 	public String toString()
 	{
-		return "Fruit ["+ super.toString() + " healthIncrement= " + healthIncrement + "]";
+		return "Fruit ["+ super.toString() + ", healthIncrement= " + healthIncrement + "]";
 	}
 
-	public ArrayList<Fruit> createFruits()
+	public static ArrayList<Fruit> createFruits()
 	{
 		//Creates a list for fruit objects.
 		ArrayList<Fruit> fruitList = new ArrayList<>();
@@ -47,8 +47,18 @@ public class Fruit extends Items
 		return fruitList;
 	}
 	
-	public void consumeFruit()
+	public void consumeFruit(Fruit fruit)
 	{
-
+		Player.setHealth(Player.getHealth() + fruit.healthIncrement);
 	}
+	
+//	Test
+//	public static void main(String [] args)
+//	{
+//		ArrayList<Fruit> list = new ArrayList<>();
+//		list = createFruits();
+//		
+//		System.out.println(list.toString());
+//
+//	}
 }
