@@ -1,22 +1,59 @@
-/**
- * 
- */
+import java.util.ArrayList;
 
 /**
- * @author Cesar Mauricio Romero-Pedraza
- *Apr 4, 2018
- * Purpose
+ * Class: Orb
+ * 
+ * @author Jose Castro	Last Edited: 4/5/18
+ *
  */
+
 public class Orb extends Items
 {
 	private int levelIncrement;
-	Player player = new Player();
+
+	public Orb(int itemID, String itemName, String description, int levelIncrement)
+	{
+		super(itemID, itemName, description);
+		this.levelIncrement = levelIncrement;
+	}
+
+	public int getLevelIncrement()
+	{
+		return levelIncrement;
+	}
+
+	public void setLevelIncrement(int levelIncrement)
+	{
+		this.levelIncrement = levelIncrement;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Orb [" + super.toString() +  ", levelIncrement = " + levelIncrement + "]";
+	}
+
+	/*
+	 * The user can use a orb to increase their attack, defense or overall health. 
+	 * The orb can only increase one attribute at a time. 
+	 * The orb is a consumable and is added to the inventory upon pick up. 
+	 */
+	public static ArrayList<Orb> createOrbs()
+	{
+		//Creates a list for Orb objects.
+		ArrayList<Orb> orbList = new ArrayList<>();
+		//For loops creates 100 Orb objects and adds them to the list.
+		for(int i = 0; i < 100; i++)
+		{
+			Orb orb = new Orb(i, "Orb", "An orb can increase the attack, defense or overall health.", 2);
+			orbList.add(orb);
+		}
+		//returns the list.
+		return orbList;
+	}
 	
 	public void useOrb()
 	{
-		//Empty for now until we figure out the logic to apply increment.
-		//We are supposed to have a choice of adding to health, attack or defense
-		//If defense the ghost attack level is lowered by 1
+		//Set player's attack, defense or health level here
 	}
-	
 }

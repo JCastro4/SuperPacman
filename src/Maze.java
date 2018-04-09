@@ -10,7 +10,6 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class Maze extends JFrame
@@ -118,7 +117,7 @@ public class Maze extends JFrame
 				tile.setLocation((x*panelSize) + 23, (y*panelSize) + 25);
 				if(map[x][y] == 0)
 				{
-					tile.setBackground(Color.GRAY);
+					tile.setBackground(Color.BLACK);
 				}
 				else
 				{
