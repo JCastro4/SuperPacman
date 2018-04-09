@@ -6,6 +6,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -23,7 +24,15 @@ public class Maze extends JFrame
 
 	public Maze(String str)
 	{
-		loadMap(str);
+		try
+		{
+			loadMap(str);
+		}
+		catch (IOException e1)
+		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		this.setResizable(true);
 		this.setSize((columns*panelSize) + 50, (rows*panelSize) + 70);
 		this.setTitle("Maze");
@@ -106,7 +115,7 @@ public class Maze extends JFrame
 			{
 				Tile tile = new Tile(x, y); // Displays green tile for player
 				tile.setSize(panelSize, panelSize);
-				tile.setLocation((x*panelSize)+23, (y*panelSize)+25);
+				tile.setLocation((x*panelSize) + 23, (y*panelSize) + 25);
 				if(map[x][y] == 0)
 				{
 					tile.setBackground(Color.GRAY);
@@ -138,11 +147,12 @@ public class Maze extends JFrame
 		new MainMenu();
 	}
 
-	public void loadMap(String str)
+	public void loadMap(String str) throws IOException
 	{
+		BufferedReader br = null;
 		try
 		{
-			BufferedReader br = new BufferedReader(new FileReader(str));
+			br = new BufferedReader(new FileReader(str));
 			StringBuilder sb = new StringBuilder();
 			String line = br.readLine();
 
@@ -177,6 +187,10 @@ public class Maze extends JFrame
 		catch(Exception e)
 		{
 			System.out.println("Unable to load existing map(if exists), creating new map.");
+		}
+		finally 
+		{
+			br.close();
 		}
 	}
 }
