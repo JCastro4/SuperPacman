@@ -1,6 +1,7 @@
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class Tile extends JPanel
 {
 	int x, y;
