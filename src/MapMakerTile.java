@@ -17,6 +17,9 @@ public class MapMakerTile extends JPanel
 
 		addMouseListener(new MouseAdapter()
 		{
+			// add condition for 2 for fruit and 3 for orb
+			//Load image of orb or fruit instead of color. If we do not figure out how
+			//to do this we can just use a color for now.
 			public void mousePressed(MouseEvent e) 
 			{
 				if(e.getButton() == MouseEvent.BUTTON1)
