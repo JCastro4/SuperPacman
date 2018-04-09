@@ -109,7 +109,7 @@ public class Maze extends JFrame
 				tile.setLocation((x*panelSize)+23, (y*panelSize)+25);
 				if(map[x][y] == 0)
 				{
-					tile.setBackground(Color.GRAY);
+					tile.setBackground(Color.BLACK);
 				}
 				else
 				{
