@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class MapMakerTile extends JPanel
 {
 	int x, y;

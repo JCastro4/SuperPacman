@@ -10,6 +10,8 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 
 @SuppressWarnings("serial")
 public class Maze extends JFrame
@@ -106,6 +108,7 @@ public class Maze extends JFrame
 		player = new Player();
 		player.setVisible(true);
 		this.add(player);
+		
 
 		//Color map
 		for(int y = 0; y < columns; y++)
@@ -139,6 +142,7 @@ public class Maze extends JFrame
 			}
 		}
 		this.setVisible(true);
+		
 	}
 
 	public static void main(String args[])
