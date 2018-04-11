@@ -23,6 +23,11 @@ public class Player extends Person
 			this.setLocation(this.getX() - 15, this.getY());
 			x--;
 		}
+		if(Maze.map[x][y] == 2)
+		{
+			Maze.map[x][y] = 1;
+			autoPickupItems();
+		}
 	}
 
 	public void moveRight() 
@@ -31,6 +36,11 @@ public class Player extends Person
 		{
 			this.setLocation(this.getX()+15, this.getY());
 			x++;
+		}
+		if(Maze.map[x][y] == 2)
+		{
+			Maze.map[x][y] = 1;
+			autoPickupItems();
 		}
 	}
 
@@ -41,6 +51,11 @@ public class Player extends Person
 			this.setLocation(this.getX(), this.getY() - 15);
 			y--;
 		}
+		if(Maze.map[x][y] == 2)
+		{
+			Maze.map[x][y] = 1;
+			autoPickupItems();
+		}
 	}
 
 	public void moveDown() 
@@ -49,6 +64,12 @@ public class Player extends Person
 		{
 			this.setLocation(this.getX(), this.getY() + 15);
 			y++;
+			
+			if(Maze.map[x][y] == 2)
+			{
+				Maze.map[x][y] = 1;
+				autoPickupItems();
+			}
 		}
 	}
 
@@ -98,9 +119,7 @@ public class Player extends Person
 	
 	public void autoPickupItems()
 	{
-		if(Maze.map[x][y] == 2)
-		{
-			inventoryList.add(new Fruit(1, "Fruit", "A Yummy fruit.", 10));
-		}
+			this.inventoryList.add(new Fruit(1, "Fruit", "A Yummy fruit.", 10));
+			System.out.println(inventoryList.toString());
 	}
 }
