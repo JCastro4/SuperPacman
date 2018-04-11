@@ -95,11 +95,12 @@ public class Player extends Person
 	{
 		this.inventoryList = inventoryList;
 	}
-//	public void autoPickupItems(int tileValue)
-//	{
-//		if(tileValue == 2)
-//		{
-//			Orb.
-//		}
-//	}
+	
+	public void autoPickupItems()
+	{
+		if(Maze.map[x][y] == 2)
+		{
+			inventoryList.add(new Fruit(1, "Fruit", "A Yummy fruit.", 10));
+		}
+	}
 }
