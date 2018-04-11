@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Orb extends Items
 {
 	private int levelIncrement;
+	
 
 	public Orb(int itemID, String itemName, String description, int levelIncrement)
 	{

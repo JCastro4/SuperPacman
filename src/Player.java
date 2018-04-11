@@ -18,7 +18,7 @@ public class Player extends Person
 
 	public void moveLeft() 
 	{
-		if(x > 0 && Maze.map[x - 1][y] == 1)
+		if(x > 0 && Maze.map[x - 1][y] != 0)
 		{
 			this.setLocation(this.getX() - 15, this.getY());
 			x--;
@@ -27,7 +27,7 @@ public class Player extends Person
 
 	public void moveRight() 
 	{
-		if(x < Maze.columns - 1 && Maze.map[x + 1][y] == 1)
+		if(x < Maze.columns - 1 && Maze.map[x + 1][y] != 0)
 		{
 			this.setLocation(this.getX()+15, this.getY());
 			x++;
@@ -36,7 +36,7 @@ public class Player extends Person
 
 	public void moveUp() 
 	{
-		if(y > 0 && Maze.map[x][y - 1] == 1)
+		if(y > 0 && Maze.map[x][y - 1] != 0)
 		{
 			this.setLocation(this.getX(), this.getY() - 15);
 			y--;
@@ -45,7 +45,7 @@ public class Player extends Person
 
 	public void moveDown() 
 	{
-		if(y < Maze.rows - 1 && Maze.map[x][y + 1] == 1)
+		if(y < Maze.rows - 1 && Maze.map[x][y + 1] != 0)
 		{
 			this.setLocation(this.getX(), this.getY() + 15);
 			y++;
@@ -95,4 +95,11 @@ public class Player extends Person
 	{
 		this.inventoryList = inventoryList;
 	}
+//	public void autoPickupItems(int tileValue)
+//	{
+//		if(tileValue == 2)
+//		{
+//			Orb.
+//		}
+//	}
 }

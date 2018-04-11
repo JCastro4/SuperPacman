@@ -15,7 +15,7 @@ public class Items
 
 	public Items(int itemID, String itemName, String description)
 	{
-		super();
+//		super();
 		this.itemID = itemID;
 		this.itemName = itemName;
 		this.description = description;

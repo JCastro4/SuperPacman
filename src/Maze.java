@@ -122,6 +122,14 @@ public class Maze extends JFrame
 				{
 					tile.setBackground(Color.BLACK);
 				}
+				else if (map[x][y] == 2)
+				{
+					tile.setBackground(Color.blue); //blue for orb
+				}
+				else if (map[x][y] == 3)
+				{
+					tile.setBackground(Color.pink); //pink for fruit
+				}
 				else
 				{
 					tile.setBackground(Color.WHITE);
