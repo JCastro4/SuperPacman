@@ -9,6 +9,10 @@
  *	(shortcuts) if the user answer the question correctly.
  *	Note gives hints to the user.
  */
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.*;
 
 public class Puzzles {
 
@@ -68,5 +72,41 @@ public class Puzzles {
 	{
 		this.solution = solution;
 	}
+	/*
+	 * Create a method for puzzle which reads text file. 
+	 * The method should be able to pull a random 
+	 * Still a work in progress, ill finish up the code tonight. 
+	 */
+	  // The name of the file to open.
+	public void loadPuzzle(String puzzle) throws IOException
+	{
 	
-}
+     puzzle = "Puzzle.txt";
+
+    // This will reference one line at a time
+    String line = null;
+
+    try {
+        // FileReader reads text files 
+        FileReader fileReader = new FileReader(puzzle);
+
+       
+        BufferedReader bufferedReader =  new BufferedReader(fileReader);
+
+        while((line = bufferedReader.readLine()) != null) {  
+            System.out.println(line);
+        }   
+
+        // Always close files.
+        bufferedReader.close();         
+    }
+    catch(FileNotFoundException ex) {
+        System.out.println("Unable to open file '" + puzzle + "'");                
+    }
+    catch(IOException ex) {
+        System.out.println( "Error reading file '"  + puzzle + "'");                  
+       
+    }
+		}
+	}
+
