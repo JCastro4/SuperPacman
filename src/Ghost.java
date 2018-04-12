@@ -1,4 +1,7 @@
-
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /*
  * Main boss: Pinky
@@ -94,4 +97,36 @@ public class Ghost extends Person
 		Ghost ghost4 = new Ghost("ghost4", "blue", color, 50, 50, 30, 30/70);
 		
 	}
-}
+	
+	public void loadGhost(String monster) throws IOException
+	{
+	
+     monster = "Monster.txt";
+
+    // This will reference one line at a time
+    String line = null;
+
+    try {
+        // FileReader reads text files 
+        FileReader fileReader = new FileReader(monster);
+
+       
+        BufferedReader bufferedReader =  new BufferedReader(fileReader);
+
+        while((line = bufferedReader.readLine()) != null) {  
+            System.out.println(line);
+        }   
+
+        // Always close files.
+        bufferedReader.close();         
+    }
+    catch(FileNotFoundException ex) {
+        System.out.println("Unable to open file '" + monster + "'");                
+    }
+    catch(IOException ex) {
+        System.out.println( "Error reading file '"  + monster + "'");                  
+       
+    }
+		}
+	}
+
