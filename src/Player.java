@@ -20,11 +20,12 @@ public class Player extends Person
 	{
 		if(x > 0 && Maze.map[x - 1][y] != 0)
 		{
-			this.setLocation(this.getX() - 15, this.getY());
+			this.setLocation(this.getX() - 10, this.getY());
 			x--;
 		}
 		if(Maze.map[x][y] == 2)
 		{
+
 			Maze.map[x][y] = 1;
 			autoPickupItems();
 		}
@@ -34,13 +35,17 @@ public class Player extends Person
 	{
 		if(x < Maze.columns - 1 && Maze.map[x + 1][y] != 0)
 		{
-			this.setLocation(this.getX()+15, this.getY());
+			this.setLocation(this.getX()+10, this.getY());
 			x++;
+			
 		}
 		if(Maze.map[x][y] == 2)
 		{
-			Maze.map[x][y] = 1;
 			autoPickupItems();
+			Maze.map[x][y] = 1;
+			Tile tile = new Tile(x, y); // Displays green tile for player
+			tile.setBackground(Color.black);
+			
 		}
 	}
 
@@ -48,7 +53,7 @@ public class Player extends Person
 	{
 		if(y > 0 && Maze.map[x][y - 1] != 0)
 		{
-			this.setLocation(this.getX(), this.getY() - 15);
+			this.setLocation(this.getX(), this.getY() - 10);
 			y--;
 		}
 		if(Maze.map[x][y] == 2)
@@ -62,13 +67,14 @@ public class Player extends Person
 	{
 		if(y < Maze.rows - 1 && Maze.map[x][y + 1] != 0)
 		{
-			this.setLocation(this.getX(), this.getY() + 15);
+			this.setLocation(this.getX(), this.getY() + 10);
 			y++;
 			
 			if(Maze.map[x][y] == 2)
 			{
-				Maze.map[x][y] = 1;
 				autoPickupItems();
+				Maze.map[x][y] = 1;
+
 			}
 		}
 	}

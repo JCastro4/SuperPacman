@@ -18,7 +18,7 @@ public class Maze extends JFrame
 {
 	public static int rows = 80;
 	public static int columns = 80;
-	public static int panelSize = 15;
+	public static int panelSize = 10;
 	public static int map[][] = new int[columns][rows];
 	public static int endLevelLoc;
 	Player player;
@@ -125,6 +125,7 @@ public class Maze extends JFrame
 				else if (map[x][y] == 2)
 				{
 					tile.setBackground(Color.blue); //blue for orb
+					
 				}
 				else if (map[x][y] == 3)
 				{
@@ -151,6 +152,7 @@ public class Maze extends JFrame
 		}
 		this.setVisible(true);
 		
+	
 	}
 
 	public static void main(String args[])

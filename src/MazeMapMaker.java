@@ -16,7 +16,7 @@ public class MazeMapMaker extends JFrame
 {
 	static int rows = 80;
 	static int columns = 80;
-	int panelSize = 15;
+	int panelSize = 10;
 	static int map[][] = new int[columns][rows];
 	ArrayList<String> mapList = new ArrayList<String>();
 	int level = 0;
