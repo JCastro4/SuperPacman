@@ -12,7 +12,7 @@ public class Player extends Person
 
 	public Player() 
 	{
-		this.setBackground(Color.getHSBColor(0.3f, 0.3f, 1));
+		this.setBackground(Color.green);
 		this.setSize(Maze.panelSize, Maze.panelSize);
 	}
 
