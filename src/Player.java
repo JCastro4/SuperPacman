@@ -27,8 +27,8 @@ public class Player extends Person
 		{
 
 			Maze.map[x][y] = 1;
-			autoPickupItems();
-			Maze.orbCount ++;
+			autoPickupItems(Maze.map[x][y]);
+//			Maze.orbCount ++;
 		}
 	}
 
@@ -42,8 +42,8 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 2)
 		{
-			autoPickupItems();
-			Maze.orbCount ++;
+			autoPickupItems(Maze.map[x][y]);
+//			Maze.orbCount ++;
 			Maze.map[x][y] = 1;
 			Tile tile = new Tile(x, y); // Displays green tile for player
 			tile.setBackground(Color.black);
@@ -61,8 +61,8 @@ public class Player extends Person
 		if(Maze.map[x][y] == 2)
 		{
 			Maze.map[x][y] = 1;
-			Maze.orbCount ++;
-			autoPickupItems();
+//			Maze.orbCount ++;
+			autoPickupItems(Maze.map[x][y]);
 		}
 	}
 
@@ -75,8 +75,8 @@ public class Player extends Person
 			
 			if(Maze.map[x][y] == 2)
 			{
-				autoPickupItems();
-				Maze.orbCount ++;
+				autoPickupItems(Maze.map[x][y]);
+//				Maze.orbCount ++;
 				Maze.map[x][y] = 1;
 
 			}
@@ -127,9 +127,17 @@ public class Player extends Person
 		this.inventoryList = inventoryList;
 	}
 	
-	public void autoPickupItems()
+	public void autoPickupItems(int item)
 	{
+		if(item == 2)
+		{
+			Maze.orbCount ++;
+			System.out.println("Orb count: " + Maze.orbCount);
+		}
+		if(item == 3)
+		{
 			this.inventoryList.add(new Fruit(1, "Fruit", "A Yummy fruit.", 10));
 			System.out.println(inventoryList.toString());
+		}
 	}
 }
