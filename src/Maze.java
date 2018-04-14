@@ -120,7 +120,7 @@ public class Maze extends JFrame
 		
 
 		//Color map
-		for(int y = 0; y < columns; y++)
+		for(int y = 0; y < 60; y++)
 		{
 			for(int x = 0; x < rows; x++)
 			{
