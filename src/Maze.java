@@ -35,7 +35,7 @@ public class Maze extends JFrame
 			e1.printStackTrace();
 		}
 		this.setResizable(true);
-		this.setSize((columns*panelSize) + 50, (rows*panelSize) + 70);
+		this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
 		this.setTitle("Maze");
 		this.setLayout(null);
 
