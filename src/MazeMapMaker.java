@@ -81,7 +81,7 @@ public class MazeMapMaker extends JFrame
 			if(map.exists())
 			{
 				System.out.println("Level "+i+" exists");
-				mapList.add("Level "+i+".map");
+				mapList.add("Level " + i + ".map");
 				levelsExistAlready = true;
 			}
 		}

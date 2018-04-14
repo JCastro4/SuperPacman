@@ -1,4 +1,5 @@
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -9,7 +10,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
@@ -21,6 +24,8 @@ public class Maze extends JFrame
 	public static int panelSize = 10;
 	public static int map[][] = new int[columns][rows];
 	public static int endLevelLoc;
+	public JLabel outputLabel;
+	static int orbCount = 0;
 	Player player;
 
 	public Maze(String str)
@@ -35,9 +40,10 @@ public class Maze extends JFrame
 			e1.printStackTrace();
 		}
 		this.setResizable(true);
-		this.setSize((columns*panelSize) + 50, (rows*panelSize) + 70);
+		this.setSize((columns*panelSize) + 500, (rows*panelSize) + 70);
 		this.setTitle("Maze");
 		this.setLayout(null);
+//		this.setLayout();
 
 		this.addKeyListener(new KeyListener()
 		{
@@ -69,9 +75,10 @@ public class Maze extends JFrame
 					player.moveRight();
 				}
 
-				if(player.x == columns-1 && player.y == endLevelLoc)
+//				if(player.x == columns-1 && player.y == endLevelLoc)
+				if(orbCount == 1)
 				{
-					JOptionPane.showMessageDialog(null, "Congratulations, you've beaten the level!", "End Game", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Congratulations, you've collected all 100 orbs", "Game Won!", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
 					new MainMenu();
 				}
@@ -108,6 +115,7 @@ public class Maze extends JFrame
 		player = new Player();
 		player.setVisible(true);
 		this.add(player);
+//		this.add(comp)
 		
 
 		//Color map
@@ -137,7 +145,7 @@ public class Maze extends JFrame
 					tile.setWall(false);
 					if(x == 0)
 					{
-						player.setLocation((x*panelSize) + 23, (y * panelSize) + 25);
+						player.setLocation((x * panelSize) + 23, (y * panelSize) + 25);
 						player.y = y;
 					}
 					if(x == columns - 1)
@@ -151,6 +159,7 @@ public class Maze extends JFrame
 			}
 		}
 		this.setVisible(true);
+		
 		
 	
 	}
@@ -182,7 +191,7 @@ public class Maze extends JFrame
 			{
 				for(int x = 0; x < rows; x++)
 				{
-					String mapChar = mapStr.substring(counter, counter+1);
+					String mapChar = mapStr.substring(counter, counter + 1);
 					if(!mapChar.equals("\r\n") && !mapChar.equals("\n") && !mapChar.equals("\r"))
 					{//If it's a number
 						//System.out.print(mapChar);
