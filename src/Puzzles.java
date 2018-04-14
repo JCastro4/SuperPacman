@@ -76,6 +76,11 @@ public class Puzzles {
 	 * Create a method for puzzle which reads text file. 
 	 * The method should be able to pull a random 
 	 * Still a work in progress, ill finish up the code tonight. 
+	 * 
+	 * Needs to be able to check if the solution is correct based on the users input. 
+	 * Needs to show the question: 
+	 * Needs to show hint if note is picked up: 
+	 * Read line by line and assign the description to a variable, assign the solution a variable, and assign the hint to a variable
 	 */
 	  // The name of the file to open.
 	public void loadPuzzle(String puzzle) throws IOException

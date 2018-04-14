@@ -28,6 +28,7 @@ public class Player extends Person
 
 			Maze.map[x][y] = 1;
 			autoPickupItems();
+			Maze.orbCount ++;
 		}
 	}
 
@@ -42,6 +43,7 @@ public class Player extends Person
 		if(Maze.map[x][y] == 2)
 		{
 			autoPickupItems();
+			Maze.orbCount ++;
 			Maze.map[x][y] = 1;
 			Tile tile = new Tile(x, y); // Displays green tile for player
 			tile.setBackground(Color.black);
@@ -59,6 +61,7 @@ public class Player extends Person
 		if(Maze.map[x][y] == 2)
 		{
 			Maze.map[x][y] = 1;
+			Maze.orbCount ++;
 			autoPickupItems();
 		}
 	}
@@ -73,6 +76,7 @@ public class Player extends Person
 			if(Maze.map[x][y] == 2)
 			{
 				autoPickupItems();
+				Maze.orbCount ++;
 				Maze.map[x][y] = 1;
 
 			}

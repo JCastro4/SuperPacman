@@ -17,14 +17,14 @@ import javax.swing.JLabel;
 public class MainMenu 
 {
 
-	JFrame Menu = new JFrame("Maze");
+	JFrame Menu = new JFrame("Super Pacman");
 	JButton Start = new JButton("Play");
 	JButton Exit = new JButton("Exit");
 	JButton MapMaker = new JButton("Map Maker");
 	ImageIcon picture = new ImageIcon("res/Images/MazePicture.png");
 	JLabel imageLabel = new JLabel(picture);
 	ArrayList<String> mapList = new ArrayList<String>();
-	JComboBox<String> lvlList;
+	JComboBox<String> levelList;
 	int menuWidth = 100; //Width of each button/item on display
 	int menuHeight = 30;//Height of each button/item on display
 	int menuY = 460; //Button/item location on display
@@ -36,7 +36,7 @@ public class MainMenu
 	{
 		//Load map list
 		getMapList();
-		lvlList = new JComboBox<String>(mapList.toArray(new String[mapList.size()]));
+		levelList = new JComboBox<String>(mapList.toArray(new String[mapList.size()]));
 
 		//Menu Variables
 		Menu.setResizable(true);
@@ -55,7 +55,7 @@ public class MainMenu
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				new Maze(lvlList.getSelectedItem().toString());
+				new Maze(levelList.getSelectedItem().toString());
 				Menu.setVisible(false);
 			}
 
@@ -78,9 +78,9 @@ public class MainMenu
 		});
 
 		//Level Selector
-		lvlList.setSize(menuWidth+35, menuHeight);
-		lvlList.setLocation(230, menuY);
-		Menu.add(lvlList);
+		levelList.setSize(menuWidth+35, menuHeight);
+		levelList.setLocation(230, menuY);
+		Menu.add(levelList);
 
 		//Exit Button Variables
 		Exit.setSize(menuWidth,menuHeight);
@@ -109,10 +109,10 @@ public class MainMenu
 	{
 		for(int i = 0; i < 99; i++)
 		{
-			File map = new File("./Level "+i+".map");
+			File map = new File("./Level "+ i +".map");
 			if(map.exists()){
-				System.out.println("Level "+i+" exists");
-				mapList.add("Level "+i+".map");
+				System.out.println("Level "+ i +" exists");
+				mapList.add("Level "+ i +".map");
 				levelsExistAlready = true;
 			}
 		}
