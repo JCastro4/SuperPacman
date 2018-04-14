@@ -27,7 +27,6 @@ public class Maze extends JFrame
 	public JLabel outputLabel;
 	static int orbCount = 0;
 	Player player;
-	StatsDisplay statsDisplay = new StatsDisplay();
 
 	public Maze(String str)
 	{
@@ -46,7 +45,6 @@ public class Maze extends JFrame
 
 		this.setTitle("Super Pacman");
 		this.setLayout(null);
-		this.add(statsDisplay, BorderLayout.EAST);
 //		this.setLayout();
 
 		this.addKeyListener(new KeyListener()
