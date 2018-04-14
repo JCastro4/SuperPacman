@@ -42,7 +42,8 @@ public class Maze extends JFrame
 		this.setResizable(true);
 
 		this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
-		this.setTitle("Maze");
+
+		this.setTitle("Super Pacman");
 		this.setLayout(null);
 //		this.setLayout();
 
@@ -120,7 +121,7 @@ public class Maze extends JFrame
 		
 
 		//Color map
-		for(int y = 0; y < columns; y++)
+		for(int y = 0; y < 60; y++)
 		{
 			for(int x = 0; x < rows; x++)
 			{
