@@ -144,6 +144,10 @@ public class Maze extends JFrame
 				{
 					tile.setBackground(Color.pink); //pink for fruit
 				}
+				else if (map[x][y] == 4)
+				{
+					tile.setBackground(Color.RED);;
+				}
 				else
 				{
 					tile.setBackground(Color.WHITE);
