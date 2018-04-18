@@ -28,6 +28,7 @@ public class Maze extends JFrame
 	static int orbCount = 0;
 	Player player;
 	static boolean loadGame = false;
+	int[][] previousLocation = new int[columns][rows]; //
 
 	public Maze(String str)
 	{
@@ -150,6 +151,11 @@ public class Maze extends JFrame
 					{
 						//Initialize player location at start of game.
 						player.setLocation((x * panelSize) + 23, (y * panelSize) + 25);
+						player.y = y;
+					}
+					else if (x == 0 && loadGame)
+					{
+						player.setLocation(previousLocation);
 						player.y = y;
 					}
 					if(x == columns - 1)
