@@ -157,8 +157,41 @@ public class Ghost extends Person
 			
 			//This line will show lines 1-8 
 			//Currently only prints one line at a time 
+			//This currently will print each of the ghosts information. 
+			//I was thinking we could call this information based on the location of the ghost in the maze. 
+			
+			
+			//Pinky 
 			System.out.println(myarray[1].replace("\"", "")+ '\n' + myarray[2].replace("\"", "")+'\n' + myarray[3].replace("\"", "")+'\n'+ myarray[4].replace("\"","")
-				+'\n'	+ myarray[5].replace("\"", "")+'\n' + myarray[6].replace("\"", "")+ myarray[7].replace("\"", "")+'\n' + myarray[8].replace("\"", ""));
+				+'\n'	+ myarray[5].replace("\"", "")+'\n' + myarray[6].replace("\"", "")+ '\n' +myarray[7].replace("\"", "")+'\n' + myarray[8].replace("\"", "")+'\n');
+			
+			//Blinky
+			System.out.println(myarray[10].replace("\"", "")+ '\n' + myarray[11].replace("\"", "")+'\n' + myarray[12].replace("\"", "")+'\n'+ myarray[13].replace("\"","")
+					+'\n'	+ myarray[14].replace("\"", "")+'\n' + myarray[15].replace("\"", "")+'\n' + myarray[16].replace("\"", "")+'\n' + myarray[17].replace("\"", "")+'\n');
+		
+			//Inky
+			System.out.println(myarray[19].replace("\"", "")+ '\n' + myarray[20].replace("\"", "")+'\n' + myarray[21].replace("\"", "")+'\n'+ myarray[22].replace("\"","")
+					+'\n'	+ myarray[23].replace("\"", "")+'\n' + myarray[24].replace("\"", "")+'\n' + myarray[25].replace("\"", "")+'\n' + myarray[26].replace("\"", "")+'\n');
+			
+			//Clyde
+			System.out.println(myarray[28].replace("\"", "")+ '\n' + myarray[29].replace("\"", "")+'\n' + myarray[30].replace("\"", "")+'\n'+ myarray[31].replace("\"","")
+					+'\n'	+ myarray[32].replace("\"", "")+'\n' + myarray[33].replace("\"", "")+'\n' + myarray[34].replace("\"", "")+'\n' + myarray[35].replace("\"", "")+'\n');
+			
+			//Blue Ghost 1
+			System.out.println(myarray[36].replace("\"", "")+ '\n' + myarray[37].replace("\"", "")+'\n' + myarray[38].replace("\"", "")+'\n'+ myarray[39].replace("\"","")
+					+'\n'	+ myarray[40].replace("\"", "")+'\n' + myarray[41].replace("\"", "")+'\n' + myarray[42].replace("\"", "")+'\n' + myarray[43].replace("\"", "")+'\n');
+
+			//Blue Ghost 2
+			System.out.println(myarray[45].replace("\"", "")+ '\n' + myarray[46].replace("\"", "")+'\n' + myarray[47].replace("\"", "")+'\n'+ myarray[48].replace("\"","")
+					+'\n'	+ myarray[49].replace("\"", "")+'\n' + myarray[50].replace("\"", "")+'\n' + myarray[51].replace("\"", "")+'\n' + myarray[52].replace("\"", "")+'\n');
+			
+			//Blue Ghost 3 
+			System.out.println(myarray[53].replace("\"", "")+ '\n' + myarray[54].replace("\"", "")+'\n' + myarray[55].replace("\"", "")+'\n'+ myarray[56].replace("\"","")
+					+'\n'	+ myarray[57].replace("\"", "")+'\n' + myarray[58].replace("\"", "")+'\n' + myarray[59].replace("\"", "")+'\n' + myarray[60].replace("\"", "")+'\n');
+			
+			//Blue Ghost 4
+			System.out.println(myarray[62].replace("\"", "")+ '\n' + myarray[63].replace("\"", "")+'\n' + myarray[64].replace("\"", "")+'\n'+ myarray[65].replace("\"","")
+					+'\n'	+ myarray[66].replace("\"", "")+'\n' + myarray[67].replace("\"", "")+'\n' + myarray[68].replace("\"", "")+'\n' + myarray[69].replace("\"", "")+'\n');
 			
 		}
 	}
