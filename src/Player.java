@@ -27,8 +27,8 @@ public class Player extends Person
 		{
 
 			Maze.map[x][y] = 1;
+			Maze.orbCount ++;
 			autoPickupItems(Maze.map[x][y]);
-//			Maze.orbCount ++;
 		}
 		if(Maze.map[x][y] == 4)
 		{
@@ -46,11 +46,9 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 2)
 		{
-			autoPickupItems(Maze.map[x][y]);
-//			Maze.orbCount ++;
 			Maze.map[x][y] = 1;
-			Tile tile = new Tile(x, y); // Displays green tile for player
-			tile.setBackground(Color.black);
+			Maze.orbCount ++;
+			autoPickupItems(Maze.map[x][y]);
 		}
 		if(Maze.map[x][y] == 4)
 		{
@@ -68,7 +66,7 @@ public class Player extends Person
 		if(Maze.map[x][y] == 2)
 		{
 			Maze.map[x][y] = 1;
-//			Maze.orbCount ++;
+			Maze.orbCount ++;
 			autoPickupItems(Maze.map[x][y]);
 		}
 		if(Maze.map[x][y] == 4)
@@ -86,9 +84,9 @@ public class Player extends Person
 			
 			if(Maze.map[x][y] == 2)
 			{
-				autoPickupItems(Maze.map[x][y]);
-//				Maze.orbCount ++;
 				Maze.map[x][y] = 1;
+				Maze.orbCount ++;
+				autoPickupItems(Maze.map[x][y]);
 
 			}
 		}

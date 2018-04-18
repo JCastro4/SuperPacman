@@ -82,7 +82,7 @@ public class Maze extends JFrame
 //				if(player.x == columns-1 && player.y == endLevelLoc)
 				if(orbCount == 5)
 				{
-					JOptionPane.showMessageDialog(null, "Congratulations, you've collected all 100 orbs", "Game Won!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Congratulations, you've collected all " + orbCount, "Game Won!", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
 					new MainMenu();
 				}
