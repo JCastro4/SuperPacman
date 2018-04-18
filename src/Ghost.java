@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /*
  * Main boss: Pinky
@@ -100,8 +102,10 @@ public class Ghost extends Person
 	
 	public void loadGhost(String monster) throws IOException
 	{
+		
 	
-     monster = "Monster.txt";
+	
+  /*   monster = "Monster.txt";
 
     // This will reference one line at a time
     String line = null;
@@ -129,4 +133,33 @@ public class Ghost extends Person
     }
 		}
 	}
-
+*/
+	//	public static void main(String[] args) throws Exception {
+			 
+			// Set file name & path     
+			String filepath = "Monster.txt";
+			         
+			// Read in file
+			FileInputStream in = new FileInputStream(filepath);
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
+			
+			 
+			// Declare Array which will hold lines               
+			String[] myarray;
+			myarray = new String[175];
+			 
+			// Read each line into the array            
+			for (int i = 0; i < myarray.length; i++){
+			myarray[i] = br.readLine();
+			}
+			 
+			in.close();
+			
+			//This line will show lines 1-8 
+			//Currently only prints one line at a time 
+			System.out.println(myarray[1].replace("\"", "")+ '\n' + myarray[2].replace("\"", "")+'\n' + myarray[3].replace("\"", "")+'\n'+ myarray[4].replace("\"","")
+				+'\n'	+ myarray[5].replace("\"", "")+'\n' + myarray[6].replace("\"", "")+ myarray[7].replace("\"", "")+'\n' + myarray[8].replace("\"", ""));
+			
+		}
+	}
+	
