@@ -51,7 +51,10 @@ public class Player extends Person
 			Maze.map[x][y] = 1;
 			Tile tile = new Tile(x, y); // Displays green tile for player
 			tile.setBackground(Color.black);
-			
+		}
+		if(Maze.map[x][y] == 4)
+		{
+			BattleWindow battleWindow = new BattleWindow();
 		}
 	}
 
@@ -67,6 +70,10 @@ public class Player extends Person
 			Maze.map[x][y] = 1;
 //			Maze.orbCount ++;
 			autoPickupItems(Maze.map[x][y]);
+		}
+		if(Maze.map[x][y] == 4)
+		{
+			BattleWindow battleWindow = new BattleWindow();
 		}
 	}
 
@@ -84,6 +91,10 @@ public class Player extends Person
 				Maze.map[x][y] = 1;
 
 			}
+		}
+		if(Maze.map[x][y] == 4)
+		{
+			BattleWindow battleWindow = new BattleWindow();
 		}
 	}
 
