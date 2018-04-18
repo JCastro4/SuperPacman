@@ -72,6 +72,9 @@ public class MainMenu
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				//Sets loadGame to true so player will not be initialized
+				//and a saved location can be used instead.
+				Maze.loadGame = true; 
 				new Maze(levelList.getSelectedItem().toString());
 				Menu.setVisible(false);
 			}
