@@ -5,6 +5,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Class: Puzzles
+ * 
+ * @author Cesar
+ * @author Boji Benji
+ *
+ *	Purpose:
+ *	Shows monster information through text files. 
+ */
+
 /*
  * Main boss: Pinky
  * Other Monsters: Blue Ghost0-4
@@ -99,6 +109,8 @@ public class Ghost extends Person
 		Ghost ghost4 = new Ghost("ghost4", "blue", color, 50, 50, 30, 30/70);
 		
 	}
+	
+	
 	
 	public void loadGhost(String monster) throws IOException
 	{
