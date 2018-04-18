@@ -31,7 +31,7 @@ public class MainMenu
 	int menuY = 460; //Button/item location on display
 //	int WIDTH = 490;
 	int WIDTH = 600;
-	int HEIGHT = 530;
+	int HEIGHT = 550;
 
 
 	public MainMenu() 
