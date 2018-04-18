@@ -30,6 +30,10 @@ public class Player extends Person
 			autoPickupItems(Maze.map[x][y]);
 //			Maze.orbCount ++;
 		}
+		if(Maze.map[x][y] == 4)
+		{
+			BattleWindow battleWindow = new BattleWindow();
+		}
 	}
 
 	public void moveRight() 
