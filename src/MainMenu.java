@@ -20,6 +20,7 @@ public class MainMenu
 	JFrame Menu = new JFrame("Super Pacman");
 	JButton Start = new JButton("Play");
 	JButton Exit = new JButton("Exit");
+	JButton Load = new JButton("Load");
 	JButton MapMaker = new JButton("Map Maker");
 	ImageIcon picture = new ImageIcon("res/Images/MazePicture.png");
 	JLabel imageLabel = new JLabel(picture);
@@ -28,7 +29,8 @@ public class MainMenu
 	int menuWidth = 100; //Width of each button/item on display
 	int menuHeight = 30;//Height of each button/item on display
 	int menuY = 460; //Button/item location on display
-	int WIDTH = 490;
+//	int WIDTH = 490;
+	int WIDTH = 600;
 	int HEIGHT = 530;
 
 
@@ -50,6 +52,21 @@ public class MainMenu
 		Start.setLocation(10, menuY);
 		Menu.add(Start);
 		Start.addActionListener(new ActionListener()
+		{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				new Maze(levelList.getSelectedItem().toString());
+				Menu.setVisible(false);
+			}
+
+		});	
+		//Load previous saved game progress
+		Load.setSize(menuWidth,menuHeight);
+		Load.setLocation(475, menuY);
+		Menu.add(Load);
+		Load.addActionListener(new ActionListener()
 		{
 
 			@Override
