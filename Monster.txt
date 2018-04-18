@@ -1,0 +1,71 @@
+ID	
+M00	Name: Pinky	
+	Color: Pink		
+	Description: A boss ghost that can attack user’s life points as well as his/her attack, defense.	
+	HP: 100 
+	Attributes: 
+	Accuracy: 50/50 chance of hit 
+	Attack: 80 
+	Defense:60
+
+M01	Name: Blinky	
+	Color: Red	  
+	Description: Red ghost that can attack Attributes-points. Red ghost has the ability to attack the user’s attributes, attack, defense, respectively as well as his/her life points.	
+	HP: 75 
+	Attributes: 
+	Accuracy: 40/60 
+	Attack: 60 
+	Defense: 40
+
+M02	Name: Inky	
+	Color: Cyan		
+	Description: Cyan ghost that can attack Attributes-points. Cyan ghost has the ability to attack the user’s attributes, attack, defense, respectively as well as his/her life points.	
+	HP: 75	
+	Attributes: 
+	Accuracy: 40/60 
+	Attack: 60 
+	Defense: 40
+
+M03	Name: Clyde	
+	Color: Orange	
+	Description: Orange ghosts that can attack Attributes-points. Orange ghost has the ability to attack the user’s attributes, attack, defense, respectively as well as his/her life points.	
+	HP: 75	
+	Attributes: 
+	Accuracy: 40/60 
+	Attack: 60 
+	Defense: 40
+
+M04	Name: Blue Ghost 1	
+	Color: Blue	
+	Description: Blue ghosts that solely attack Life-points	
+	HP: 50		
+	Attributes: 
+	Accuracy: 30/70 
+	Attack: 50 
+	Defense: 30
+
+M05	Name: Blue Ghost 2	
+	Color: Blue	
+	Description: Blue ghosts that solely attack Life-points	
+	HP: 50		
+	Attributes: 
+	Accuracy: 30/70 
+	Attack: 50 
+	Defense: 30
+
+M06	Name: Blue Ghost 3	
+	Color: Blue	
+	Description: Blue ghosts that solely attack Life-points	
+	HP: 50	 
+	Attributes: 
+	Accuracy: 30/70 
+	Attack: 50 
+	Defense: 30
+
+M07	Name: Blue Ghost 4	
+	Color: Blue	
+	Description:Blue ghosts that solely attack Life-points	
+	HP:50	
+	Attributes: accuracy: 30/70 
+	Attack: 50 
+	Defense: 30
