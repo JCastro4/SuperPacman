@@ -25,20 +25,15 @@ public class BattleWindow
 	{
 		window.setSize(500, 690);
 		panel.setLayout(new BorderLayout());
-		//ghostInfo
-		
-		 
+		//ghostInfo 
 		window.add(panel);
-		window.setVisible(true);
-		
-	
-		
 		subPanel.add( new JButton( "Attack" ));
 	    subPanel.add( new JButton( "Flee" ));
 	    subPanel.add( new JButton( "Examine" ));
 	    subPanel.add(new JButton("Use Item")); 
 	    
 	    panel.add(subPanel, BorderLayout.PAGE_END);
+	    window.setVisible(true);
 	    
 		
 	}	
