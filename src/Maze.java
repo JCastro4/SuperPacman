@@ -21,6 +21,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
 import com.sun.corba.se.spi.orbutil.fsm.Action;
+import com.sun.org.glassfish.external.statistics.Stats;
 
 @SuppressWarnings("serial")
 public class Maze extends JFrame implements ActionListener, KeyListener
@@ -30,16 +31,16 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	public static int panelSize = 10;
 	public static int map[][] = new int[columns][rows];
 	public static int endLevelLoc;
-	public JLabel outputLabel;
+	public JLabel outputLabel = new JLabel();
 	static int orbCount = 0;
 	Player player;
 	Tile tile;
 	static boolean loadGame = false;
 	int prevX, prevY;
 
-	public JPanel maze;
-	public JPanel stats;
-	public JButton attack;
+	public JPanel maze ;
+	public JPanel stats ;
+	public JLabel attack;
 	public JLabel health;
 	public JButton saveButton = new JButton("Save Game");
 
@@ -124,6 +125,8 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 		stats = new JPanel();
 		player = new Player();
+		attack = new JLabel();
+		health = new JLabel();
 		//		setFocusable(true);
 		try
 		{
@@ -303,12 +306,20 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 		maze.addKeyListener(this);
 		//this.add((maze), BorderLayout.WEST);
-		stats.setSize(100, 100);
+		stats.setSize(600, 200);
 		stats.setBackground(Color.BLUE);
 		stats.setLayout(new BorderLayout());
 		saveButton.addActionListener(this);
 		saveButton.setSize(20, 20);
-		stats.add(saveButton,BorderLayout.LINE_END);
+		attack.setText("Attack: " + player.getAttack());
+		health.setText("Health: " + Player.getHealth());
+		outputLabel.setSize(500,200);
+		outputLabel.add(attack);
+		outputLabel.add(health);
+		stats.add(outputLabel,BorderLayout.NORTH);
+		stats.add(saveButton,BorderLayout.SOUTH);
+		
+		
 
 		//stats.add(attack);
 		//stats.setLocation(800, 10);
@@ -320,7 +331,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 		//		maze.add(tile);
 		this.add(maze,BorderLayout.CENTER);
-		this.add(stats,BorderLayout.EAST);
+		this.add(stats,BorderLayout.LINE_END);
 		//		maze.add(stats);
 		//		this.add(maze);
 		//		this.add(stats);
@@ -329,6 +340,9 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		//this.add((stats), BorderLayout.LINE_END);
 		//this.add(tile);
 		player.setVisible(true);
+		health.setVisible(true);
+		attack.setVisible(true);
+		outputLabel.setVisible(true);
 		tile.setVisible(true);
 		maze.setVisible(true);
 		stats.setVisible(true);
