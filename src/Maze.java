@@ -1,6 +1,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
@@ -36,9 +37,16 @@ public class Maze extends JFrame
 	public JPanel stats;
 	public JButton attack;
 	public JLabel health;
+	public JButton saveButton = new JButton("Save Game");
+	
+	
 
 	public Maze(String str)
 	{
+		maze = new JPanel();
+
+		stats = new JPanel();
+		player = new Player();
 		try
 		{
 			loadMap(str);
@@ -52,14 +60,18 @@ public class Maze extends JFrame
 
 		//this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
 		this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
+//		maze.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
 
 
 		this.setTitle("Super Pacman");
-		//this.setLayout(null);
+//		this.setLayout(null);
+		maze.setLayout(null);
 		this.setLayout(new BorderLayout());
+		
+
 //		this.setLayout();
 
-
+//		maze.addKeyListener(new KeyListener()
 		this.addKeyListener(new KeyListener()
 		{
 
@@ -125,12 +137,14 @@ public class Maze extends JFrame
 		});
 
 		this.setLocationRelativeTo(null);
+		
+		
 
 		//Create player
-		player = new Player();
-		player.setVisible(true);
-		this.add(player);
+		
+//		this.add(player);
 		//this.add(player);
+		maze.add(player);
 //		this.add(comp)
 		
 		prevX = 10;
@@ -180,8 +194,8 @@ public class Maze extends JFrame
 						endLevelLoc = y;
 					}
 				}
-				//maze.add(tile);
-				this.add(tile);
+				maze.add(tile);
+//				this.add(tile);
 				//this.add((stats), BorderLayout.EAST);
 
 				
@@ -233,19 +247,21 @@ public class Maze extends JFrame
 		
 		
 		
-		tile.setVisible(true);
-		maze = new JPanel();
-
-		stats = new JPanel();
+		
+//		maze = new JPanel();
+//
+//		stats = new JPanel();
 
 		maze.setSize((columns * panelSize + 50), (rows * panelSize));
 		//maze.add(tile);
 
-		maze.setVisible(true);
+		
 		//this.add((maze), BorderLayout.WEST);
 		stats.setSize(450, 690);
 		stats.setBackground(Color.BLUE);
-		stats.setVisible(true);
+		stats.setLayout(new BorderLayout());
+		stats.add(saveButton,BorderLayout.EAST);
+		
 		//stats.add(attack);
 		//stats.setLocation(800, 10);
 		maze.setBackground(Color.RED);
@@ -254,13 +270,20 @@ public class Maze extends JFrame
 		//this.add((maze), BorderLayout.LINE_START);
 		//this.add(maze);
 		
+//		maze.add(tile);
 		this.add(maze);
 		this.add(stats);
+//		maze.add(stats);
+//		this.add(maze);
+//		this.add(stats);
 		//stats.add(attack);
 		
 		//this.add((stats), BorderLayout.LINE_END);
 		//this.add(tile);
-
+		player.setVisible(true);
+		tile.setVisible(true);
+		maze.setVisible(true);
+		stats.setVisible(true);
 		this.setVisible(true);
 
 		//this.setVisible(true);
