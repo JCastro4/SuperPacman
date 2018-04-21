@@ -199,7 +199,7 @@ public class Maze extends JFrame
 			}
 		}
 		
-		attack = new JButton("Attack");
+		//attack = new JButton("Attack");
 
 		
 		
@@ -256,7 +256,7 @@ public class Maze extends JFrame
 		
 		this.add(maze);
 		this.add(stats);
-		stats.add(attack);
+		//stats.add(attack);
 		
 		//this.add((stats), BorderLayout.LINE_END);
 		//this.add(tile);
