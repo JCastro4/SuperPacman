@@ -31,7 +31,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	public static int panelSize = 10;
 	public static int map[][] = new int[columns][rows];
 	public static int endLevelLoc;
-	public JLabel outputLabel = new JLabel();
+	public JPanel outputLabel;
 	static int orbCount = 0;
 	Player player;
 	Tile tile;
@@ -40,8 +40,8 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 	public JPanel maze ;
 	public JPanel stats ;
-	public JLabel attack;
-	public JLabel health;
+	protected static JLabel attackLabel;
+	protected static JLabel healthLabel;
 	public JButton saveButton = new JButton("Save Game");
 
 	/* (non-Javadoc)
@@ -125,8 +125,10 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 		stats = new JPanel();
 		player = new Player();
-		attack = new JLabel();
-		health = new JLabel();
+		attackLabel = new JLabel();
+		healthLabel = new JLabel();
+		
+		outputLabel = new JPanel();
 		//		setFocusable(true);
 		try
 		{
@@ -311,11 +313,13 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		stats.setLayout(new BorderLayout());
 		saveButton.addActionListener(this);
 		saveButton.setSize(20, 20);
-		attack.setText("Attack: " + player.getAttack());
-		health.setText("Health: " + Player.getHealth());
-		outputLabel.setSize(500,200);
-		outputLabel.add(attack);
-		outputLabel.add(health);
+		attackLabel.setText("Attack: " + player.getAttack());
+		healthLabel.setText("Health: " + Player.getHealth());
+		outputLabel.setLayout(new BorderLayout());
+		outputLabel.add(attackLabel, BorderLayout.NORTH);
+		outputLabel.add(healthLabel,BorderLayout.SOUTH);
+//		outputLabel.setOpaque(true);
+		
 		stats.add(outputLabel,BorderLayout.NORTH);
 		stats.add(saveButton,BorderLayout.SOUTH);
 		
@@ -340,8 +344,8 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		//this.add((stats), BorderLayout.LINE_END);
 		//this.add(tile);
 		player.setVisible(true);
-		health.setVisible(true);
-		attack.setVisible(true);
+		healthLabel.setVisible(true);
+		attackLabel.setVisible(true);
 		outputLabel.setVisible(true);
 		tile.setVisible(true);
 		maze.setVisible(true);

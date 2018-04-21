@@ -45,7 +45,7 @@ public class Ghost extends Person
 		this.setName(name);
 		this.color = color;
 		this.description = description;
-		this.setHealth(health);
+		Ghost.setHealth(health);
 		this.setAttack(attack);
 		this.setDefense(defense);
 		this.setAccuracy(accuracy);

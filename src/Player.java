@@ -9,6 +9,7 @@ public class Player extends Person
 	protected int x, y;
 	private ArrayList<Items> inventoryList = new ArrayList<Items>(); //ArrayList of items
 //	Ghost ghost = new Ghost();
+	Maze maze;
 
 	public Player() 
 	{
@@ -146,6 +147,7 @@ public class Player extends Person
 		{
 			Maze.orbCount ++;
 			System.out.println("Orb count: " + Maze.orbCount);
+			Maze.healthLabel.setText(getHealth() + 10 + "");
 		}
 		if(item == 3)
 		{
