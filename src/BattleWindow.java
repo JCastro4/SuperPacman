@@ -21,10 +21,6 @@ public class BattleWindow implements ActionListener
 	JButton useItemButton = new JButton("Use item");
 	JPanel subPanel = new JPanel();
 
-	
-	
-	
-
 	public BattleWindow()
 	{
 		window.setSize(500, 690);
@@ -41,10 +37,6 @@ public class BattleWindow implements ActionListener
 	    window.setVisible(true);
 	    
 	}
-
-
-
-
 
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
