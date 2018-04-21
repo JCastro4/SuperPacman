@@ -14,6 +14,10 @@ public class BattleWindow
 	JPanel panel = new JPanel();
 	JPanel ghostStats = new JPanel();
 	JTextField ghostsInfo = new JTextField();
+	JButton attackButton = new JButton("Attack");
+	JButton fleeButton = new JButton("Flee");
+	JButton examineButton = new JButton("Examine");
+	JButton useItemButton = new JButton("Use item");
 	
 	JPanel subPanel = new JPanel();
 
@@ -27,10 +31,10 @@ public class BattleWindow
 		panel.setLayout(new BorderLayout());
 		//ghostInfo 
 		window.add(panel);
-		subPanel.add( new JButton( "Attack" ));
-	    subPanel.add( new JButton( "Flee" ));
-	    subPanel.add( new JButton( "Examine" ));
-	    subPanel.add(new JButton("Use Item")); 
+		subPanel.add(attackButton);
+	    subPanel.add(fleeButton);
+	    subPanel.add(examineButton);
+	    subPanel.add(useItemButton); 
 	    
 	    panel.add(subPanel, BorderLayout.PAGE_END);
 	    window.setVisible(true);
