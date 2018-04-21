@@ -2,6 +2,8 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
@@ -18,8 +20,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
+import com.sun.corba.se.spi.orbutil.fsm.Action;
+
 @SuppressWarnings("serial")
-public class Maze extends JFrame
+public class Maze extends JFrame implements ActionListener, KeyListener
 {
 	public static int rows = 80;
 	public static int columns = 80;
@@ -32,14 +36,87 @@ public class Maze extends JFrame
 	Tile tile;
 	static boolean loadGame = false;
 	int prevX, prevY;
-	
+
 	public JPanel maze;
 	public JPanel stats;
 	public JButton attack;
 	public JLabel health;
 	public JButton saveButton = new JButton("Save Game");
-	
-	
+
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		// TODO Auto-generated method stub
+		if(e.getSource() == saveButton)
+		{
+			System.out.println("Saved Game");
+		}
+
+	}
+
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+	 */
+	@Override
+	public void keyPressed(KeyEvent e)
+	{
+		// TODO Auto-generated method stub
+		int key = e.getKeyCode();
+		//
+		revalidate();
+		repaint();
+
+		//Navigation commands
+
+		if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
+		{
+			player.moveUp();
+		}
+		if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT || key == KeyEvent.VK_KP_LEFT)
+		{
+			player.moveLeft();
+		}
+		if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN || key == KeyEvent.VK_KP_DOWN)
+		{
+			player.moveDown();
+		}
+		if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_KP_RIGHT)
+		{
+			player.moveRight();
+		}
+		if(orbCount == 5)
+		{
+			JOptionPane.showMessageDialog(null, "Congratulations, you've collected all " + orbCount, "Game Won!", JOptionPane.INFORMATION_MESSAGE);
+			dispose();
+			new MainMenu();
+		}
+
+	}
+
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
+	@Override
+	public void keyTyped(KeyEvent e)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
+	@Override
+	public void keyReleased(KeyEvent e)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+
 
 	public Maze(String str)
 	{
@@ -47,6 +124,7 @@ public class Maze extends JFrame
 
 		stats = new JPanel();
 		player = new Player();
+		//		setFocusable(true);
 		try
 		{
 			loadMap(str);
@@ -59,73 +137,76 @@ public class Maze extends JFrame
 		this.setResizable(true);
 
 		//this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
-		this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
-//		maze.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
+		//		this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
+		this.setSize(1280, 720);
+
+		//		maze.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
 
 
 		this.setTitle("Super Pacman");
-//		this.setLayout(null);
+		//		this.setLayout(null);
 		maze.setLayout(null);
+		maze.setFocusable(true);
 		this.setLayout(new BorderLayout());
-		
 
-//		this.setLayout();
 
-//		maze.addKeyListener(new KeyListener()
-		this.addKeyListener(new KeyListener()
-		{
+		//		this.setLayout();
 
-			@Override
-			public void keyPressed(KeyEvent e) 
-			{
-				int key = e.getKeyCode();
+		//		maze.addKeyListener(new KeyListener()
+		//		this.addKeyListener(new KeyListener()
+		//		{
+		//
+		//			@Override
+		//			public void keyPressed(KeyEvent e) 
+		//			{
+		//				int key = e.getKeyCode();
+		//
+		//				revalidate();
+		//				repaint();
+		//
+		//				//Navigation commands
+		//
+		//				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
+		//				{
+		//					player.moveUp();
+		//				}
+		//				if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT || key == KeyEvent.VK_KP_LEFT)
+		//				{
+		//					player.moveLeft();
+		//				}
+		//				if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN || key == KeyEvent.VK_KP_DOWN)
+		//				{
+		//					player.moveDown();
+		//				}
+		//				if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_KP_RIGHT)
+		//				{
+		//					player.moveRight();
+		//				}
 
-				revalidate();
-				repaint();
+		//				if(player.x == columns-1 && player.y == endLevelLoc)
+		//		if(orbCount == 5)
+		//		{
+		//			JOptionPane.showMessageDialog(null, "Congratulations, you've collected all " + orbCount, "Game Won!", JOptionPane.INFORMATION_MESSAGE);
+		//			dispose();
+		//			new MainMenu();
+		//		}
+		//			}
 
-				//Navigation commands
-
-				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
-				{
-					player.moveUp();
-				}
-				if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT || key == KeyEvent.VK_KP_LEFT)
-				{
-					player.moveLeft();
-				}
-				if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN || key == KeyEvent.VK_KP_DOWN)
-				{
-					player.moveDown();
-				}
-				if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_KP_RIGHT)
-				{
-					player.moveRight();
-				}
-
-//				if(player.x == columns-1 && player.y == endLevelLoc)
-				if(orbCount == 5)
-				{
-					JOptionPane.showMessageDialog(null, "Congratulations, you've collected all " + orbCount, "Game Won!", JOptionPane.INFORMATION_MESSAGE);
-					dispose();
-					new MainMenu();
-				}
-			}
-
-			@Override
-			public void keyReleased(KeyEvent arg0) 
-			{
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void keyTyped(KeyEvent arg0) 
-			{
-				// TODO Auto-generated method stub
-
-			}
-
-		});
+		//			@Override
+		//			public void keyReleased(KeyEvent arg0) 
+		//			{
+		//				// TODO Auto-generated method stub
+		//
+		//			}
+		//
+		//			@Override
+		//			public void keyTyped(KeyEvent arg0) 
+		//			{
+		//				// TODO Auto-generated method stub
+		//
+		//			}
+		//
+		//		});
 
 		this.addWindowListener(new WindowAdapter()
 		{
@@ -137,16 +218,16 @@ public class Maze extends JFrame
 		});
 
 		this.setLocationRelativeTo(null);
-		
-		
+
+
 
 		//Create player
-		
-//		this.add(player);
+
+		//		this.add(player);
 		//this.add(player);
 		maze.add(player);
-//		this.add(comp)
-		
+		//		this.add(comp)
+
 		prevX = 10;
 		prevY = 10;
 		//Color map
@@ -164,7 +245,7 @@ public class Maze extends JFrame
 				else if (map[x][y] == 2)
 				{
 					tile.setBackground(Color.blue); //blue for orb
-					
+
 				}
 				else if (map[x][y] == 3)
 				{
@@ -195,89 +276,56 @@ public class Maze extends JFrame
 					}
 				}
 				maze.add(tile);
-//				this.add(tile);
+				//				this.add(tile);
 				//this.add((stats), BorderLayout.EAST);
 
-				
+
 
 
 				//this.setLayout(new BorderLayout());
 				//this.add((tile), BorderLayout.WEST);
-				
+
 
 				//stats.setLayout(new BorderLayout());
 				//stats.setAlignmentY(RIGHT_ALIGNMENT);
 				//tile.setVisible(true);
-
-
 			}
 		}
-		
+
 		//attack = new JButton("Attack");
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		maze = new JPanel();
-//
-//		stats = new JPanel();
-
+		//		maze = new JPanel();
+		//
+		//		stats = new JPanel();
+		//		maze.addKeyListener(this);
 		maze.setSize((columns * panelSize + 50), (rows * panelSize));
 		//maze.add(tile);
 
-		
+		maze.addKeyListener(this);
 		//this.add((maze), BorderLayout.WEST);
-		stats.setSize(450, 690);
+		stats.setSize(100, 100);
 		stats.setBackground(Color.BLUE);
 		stats.setLayout(new BorderLayout());
-		stats.add(saveButton,BorderLayout.EAST);
-		
+		saveButton.addActionListener(this);
+		saveButton.setSize(20, 20);
+		stats.add(saveButton,BorderLayout.LINE_END);
+
 		//stats.add(attack);
 		//stats.setLocation(800, 10);
 		maze.setBackground(Color.RED);
 		//this.add((stats), BorderLayout.CENTER);
-		
+
 		//this.add((maze), BorderLayout.LINE_START);
 		//this.add(maze);
-		
-//		maze.add(tile);
-		this.add(maze);
-		this.add(stats);
-//		maze.add(stats);
-//		this.add(maze);
-//		this.add(stats);
+
+		//		maze.add(tile);
+		this.add(maze,BorderLayout.CENTER);
+		this.add(stats,BorderLayout.EAST);
+		//		maze.add(stats);
+		//		this.add(maze);
+		//		this.add(stats);
 		//stats.add(attack);
-		
+
 		//this.add((stats), BorderLayout.LINE_END);
 		//this.add(tile);
 		player.setVisible(true);
@@ -287,8 +335,6 @@ public class Maze extends JFrame
 		this.setVisible(true);
 
 		//this.setVisible(true);
-		
-
 	}
 
 	public static void main(String args[])
