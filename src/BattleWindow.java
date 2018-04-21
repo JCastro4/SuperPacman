@@ -13,7 +13,7 @@ public class BattleWindow
 	
 	public BattleWindow()
 	{
-		window.setSize(400, 400);
+		window.setSize(500, 690);
 		panel.setLayout(new BorderLayout());
 		//ghostInfo
 		

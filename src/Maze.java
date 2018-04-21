@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -27,8 +28,14 @@ public class Maze extends JFrame
 	public JLabel outputLabel;
 	static int orbCount = 0;
 	Player player;
+	Tile tile;
 	static boolean loadGame = false;
 	int prevX, prevY;
+	
+	public JPanel maze;
+	public JPanel stats;
+	public JButton attack;
+	public JLabel health;
 
 	public Maze(String str)
 	{
@@ -43,11 +50,15 @@ public class Maze extends JFrame
 		}
 		this.setResizable(true);
 
+		//this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
 		this.setSize((columns*panelSize) + 500, (rows * panelSize) - 110);
 
+
 		this.setTitle("Super Pacman");
-		this.setLayout(null);
+		//this.setLayout(null);
+		this.setLayout(new BorderLayout());
 //		this.setLayout();
+
 
 		this.addKeyListener(new KeyListener()
 		{
@@ -119,6 +130,7 @@ public class Maze extends JFrame
 		player = new Player();
 		player.setVisible(true);
 		this.add(player);
+		//this.add(player);
 //		this.add(comp)
 		
 		prevX = 10;
@@ -128,7 +140,7 @@ public class Maze extends JFrame
 		{
 			for(int x = 0; x < rows; x++)
 			{
-				Tile tile = new Tile(x, y); // Displays green tile for player
+				tile = new Tile(x, y); // Displays green tile for player
 				tile.setSize(panelSize, panelSize);
 				tile.setLocation((x*panelSize) + 23, (y*panelSize) + 25);
 				if(map[x][y] == 0)
@@ -168,15 +180,92 @@ public class Maze extends JFrame
 						endLevelLoc = y;
 					}
 				}
-
-				tile.setVisible(true);
+				//maze.add(tile);
 				this.add(tile);
+				//this.add((stats), BorderLayout.EAST);
+
+				
+
+
+				//this.setLayout(new BorderLayout());
+				//this.add((tile), BorderLayout.WEST);
+				
+
+				//stats.setLayout(new BorderLayout());
+				//stats.setAlignmentY(RIGHT_ALIGNMENT);
+				//tile.setVisible(true);
+
+
 			}
 		}
+		
+		attack = new JButton("Attack");
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		tile.setVisible(true);
+		maze = new JPanel();
+
+		stats = new JPanel();
+
+		maze.setSize((columns * panelSize + 50), (rows * panelSize));
+		//maze.add(tile);
+
+		maze.setVisible(true);
+		//this.add((maze), BorderLayout.WEST);
+		stats.setSize(450, 690);
+		stats.setBackground(Color.BLUE);
+		stats.setVisible(true);
+		//stats.add(attack);
+		//stats.setLocation(800, 10);
+		maze.setBackground(Color.RED);
+		//this.add((stats), BorderLayout.CENTER);
+		
+		//this.add((maze), BorderLayout.LINE_START);
+		//this.add(maze);
+		
+		this.add(maze);
+		this.add(stats);
+		stats.add(attack);
+		
+		//this.add((stats), BorderLayout.LINE_END);
+		//this.add(tile);
+
 		this.setVisible(true);
+
+		//this.setVisible(true);
 		
-		
-	
+
 	}
 
 	public static void main(String args[])
