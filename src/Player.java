@@ -40,7 +40,7 @@ public class Player extends Person
 	{
 		if(x < Maze.columns - 1 && Maze.map[x + 1][y] != 0)
 		{
-			this.setLocation(this.getX()+10, this.getY());
+			this.setLocation(this.getX() + 10, this.getY());
 			x++;
 			
 		}

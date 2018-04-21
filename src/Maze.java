@@ -228,7 +228,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		maze.add(player);
 		//		this.add(comp)
 
-		prevX = 10;
+		prevX = 16;
 		prevY = 10;
 		//Color map
 		for(int y = 0; y < 60; y++)
@@ -270,10 +270,10 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 						player.setLocation((prevX * panelSize) + 23, (prevY * panelSize) + 25);
 						player.y = y;
 					}
-					if(x == columns - 1)
-					{
-						endLevelLoc = y;
-					}
+//					if(x == columns - 1)
+//					{
+//						endLevelLoc = y;
+//					}
 				}
 				maze.add(tile);
 				//				this.add(tile);
