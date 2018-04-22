@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
 
 import com.sun.corba.se.spi.orbutil.fsm.Action;
 import com.sun.org.glassfish.external.statistics.Stats;
@@ -309,6 +310,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		maze.addKeyListener(this);
 		//this.add((maze), BorderLayout.WEST);
 		stats.setSize(600, 200);
+		stats.setBorder(new EmptyBorder(10, 10, 10, 300));
 		stats.setBackground(Color.BLUE);
 		stats.setLayout(new BorderLayout());
 		saveButton.addActionListener(this);
