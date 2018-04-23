@@ -10,6 +10,13 @@
  *	Note gives hints to the user.
  */
 import java.io.*;
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.Stack;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
+
+import jdk.nashorn.internal.ir.WhileNode;
 
 public class Puzzles {
 
@@ -21,14 +28,27 @@ public class Puzzles {
 
 	private String solution;
 
-	public Puzzles(int puzzleID, String description, String hint, String solution)
-	{
-		super();
-		this.puzzleID = puzzleID;
-		this.description = description;
-		this.hint = hint;
-		this.solution = solution;
-	}
+//	ArrayList<String> puzzleList = new ArrayList<>();
+//	ArrayList<String> hintList = new ArrayList<>();
+//	ArrayList<String> solutionList = new ArrayList<>();
+//	ArrayList<String> puzzles = new ArrayList<>();
+//	Stack<String> puzzleList = new Stack<>();
+//	Stack<String> hintList = new Stack<>();
+//	Stack<String> solutionList = new Stack<>();
+//	Stack<String> puzzles = new Stack<>();
+	PriorityQueue<String> puzzleList = new PriorityQueue<>();
+	Stack<String> hintList = new Stack<>();
+	Stack<String> solutionList = new Stack<>();
+	Stack<String> puzzles = new Stack<>();
+
+	//	public Puzzles(int puzzleID, String description, String hint, String solution)
+	//	{
+	//		super();
+	//		this.puzzleID = puzzleID;
+	//		this.description = description;
+	//		this.hint = hint;
+	//		this.solution = solution;
+	//	}
 
 	public int getPuzzleID()
 	{
@@ -50,9 +70,9 @@ public class Puzzles {
 		this.description = description;
 	}
 
-	public String getHint()
+	public String getHint(int index)
 	{
-		return hint;
+		return hintList.get(index);
 	}
 
 	public void setHint(String hint)
@@ -69,47 +89,60 @@ public class Puzzles {
 	{
 		this.solution = solution;
 	}
-	/*
-	 * Create a method for puzzle which reads text file. 
-	 * The method should be able to pull a random 
-	 * Still a work in progress, ill finish up the code tonight. 
-	 * 
-	 * Needs to be able to check if the solution is correct based on the users input. 
-	 * Needs to show the question: 
-	 * Needs to show hint if note is picked up: 
-	 * Read line by line and assign the description to a variable, assign the solution a variable, and assign the hint to a variable
-	 */
-	  // The name of the file to open.
-	public void loadPuzzle(String puzzle) throws IOException
+	public String getPuzzle(int index)
 	{
-	
-	// Set file name & path     
-	puzzle = "Puzzle.txt";
-				         
-	// Read in file
-	FileInputStream in = new FileInputStream(puzzle);
-	BufferedReader br = new BufferedReader(new InputStreamReader(in));
-				
-				 
-	// Declare Array which will hold lines               
-	String[] myarray;
-	myarray = new String[175];
-				 
-	// Read each line into the array            
-	for (int i = 0; i < myarray.length; i++){
-	myarray[i] = br.readLine();
+		return puzzles.get(index);
 	}
-				 
-	in.close();
-				
-	System.out.println(myarray[1].replace("\"", ""));
-				 
-	//I was we could call the puzzle, for example: Upon item pick up or interaction it shows a specific description 
-	//Based on its location? Or I was think of pulling the puzzle a random order. 
-	// Print out array info in desired order. Delete " characters       
-	/*
-	 * Shows description 
-	 * ++4
+	
+	public void loadPuzzle() throws IOException
+	{
+
+		// Set file name & path     
+		String puzzle = "Puzzle.txt";
+
+		// Read in file
+		FileInputStream in = new FileInputStream(puzzle);
+		BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+
+		// Declare Array which will hold lines               
+		//	ArrayList<String> list = new ArrayList<>();
+		//	myarray = new String[175];
+		String line;		 
+		// Read each line into the array            
+		while((line = br.readLine()) != null)
+		{
+			//	puzzleList.add(br.readLine());
+			//	hintList.add(br.readLine());
+			//	solutionList.add(br.readLine());
+			puzzleList.add(line);
+//			break;
+//			hintList.add(line);
+//			break;
+//			solutionList.add(line);
+//			break;
+		}
+		int i = 0;
+		do
+		{
+			puzzles.add(puzzleList.poll());
+			hintList.add(puzzleList.poll());
+			solutionList.add(puzzleList.poll());
+		}
+		while(!puzzleList.isEmpty());
+		//	while(br.readLine() != null);
+
+		in.close();
+//		System.out.println(puzzleList.get(0));
+
+		//	System.out.println(myarray[1].replace("\"", ""));
+
+		//I was we could call the puzzle, for example: Upon item pick up or interaction it shows a specific description 
+		//Based on its location? Or I was think of pulling the puzzle a random order. 
+		// Print out array info in desired order. Delete " characters       
+		/*
+		 * Shows description 
+		 * ++4
 	1	System.out.println(myarray[1].replace("\"", ""));
 	2	System.out.println(myarray[5].replace("\"", ""));
 	3	System.out.println(myarray[9].replace("\"", ""));
@@ -134,16 +167,16 @@ public class Puzzles {
 	22	System.out.println(myarray[85].replace("\"", ""));
 	23	System.out.println(myarray[89].replace("\"", ""));
 	24	System.out.println(myarray[93].replace("\"", ""));
-	*/
-	//System.out.println(myarray[95].replace("\"", ""));
-	//System.out.println(myarray[1].replace("\"", "") + myarray[2].replace("\"", ""));
-	//System.out.println(myarray[2].replace("\"", "") + myarray[3].replace("\"", ""));
-	//System.out.println(myarray[4].replace("\"", "") + myarray[5].replace("\"", ""));
-				
-	/*
-	 * Shows Hints
-	 * i= 2
-	 * ++4 
+		 */
+		//System.out.println(myarray[95].replace("\"", ""));
+		//System.out.println(myarray[1].replace("\"", "") + myarray[2].replace("\"", ""));
+		//System.out.println(myarray[2].replace("\"", "") + myarray[3].replace("\"", ""));
+		//System.out.println(myarray[4].replace("\"", "") + myarray[5].replace("\"", ""));
+
+		/*
+		 * Shows Hints
+		 * i= 2
+		 * ++4 
 	System.out.println(myarray[2].replace("\"", ""));
 	System.out.println(myarray[6].replace("\"", ""));
 	System.out.println(myarray[10].replace("\"", ""));
@@ -168,10 +201,10 @@ public class Puzzles {
 	System.out.println(myarray[86].replace("\"", ""));
 	System.out.println(myarray[90].replace("\"", ""));
 	System.out.println(myarray[94].replace("\"", ""));
-	*/
-	/* Shows Solutions 
-	 * i=3
-	 * ++4
+		 */
+		/* Shows Solutions 
+		 * i=3
+		 * ++4
 	System.out.println(myarray[3].replace("\"", ""));
 	System.out.println(myarray[7].replace("\"", ""));
 	System.out.println(myarray[11].replace("\"", ""));
@@ -196,7 +229,7 @@ public class Puzzles {
 	System.out.println(myarray[87].replace("\"", ""));
 	System.out.println(myarray[91].replace("\"", ""));
 	System.out.println(myarray[95].replace("\"", ""));
-	*/
-	  }
+		 */
 	}
+}
 

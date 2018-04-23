@@ -46,6 +46,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	protected static JLabel orbNumLabel;
 	public JButton saveButton = new JButton("Save Game");
 	SaveLoadGame saveLoadGame = new SaveLoadGame();
+	private int arrowStrokes = 0;
 
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
@@ -71,27 +72,40 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	{
 		// TODO Auto-generated method stub
 		int key = e.getKeyCode();
+		
 		//
 		revalidate();
 		repaint();
 
 		//Navigation commands
+		if(arrowStrokes == 10 || arrowStrokes == 20 || arrowStrokes == 30 || arrowStrokes == 40 
+				|| arrowStrokes == 50 || arrowStrokes == 60 || arrowStrokes == 70 || arrowStrokes == 80
+				|| arrowStrokes == 90 || arrowStrokes == 100 || arrowStrokes == 110 || arrowStrokes == 120
+				|| arrowStrokes == 130 || arrowStrokes == 140 || arrowStrokes == 150 || arrowStrokes == 160
+				|| arrowStrokes == 170 || arrowStrokes == 180 || arrowStrokes == 190 || arrowStrokes == 200)
+		{
+			PuzzleWindow puzzleWindow = new PuzzleWindow();
+		}
 
 		if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
 		{
 			player.moveUp();
+			arrowStrokes++;
 		}
 		if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT || key == KeyEvent.VK_KP_LEFT)
 		{
 			player.moveLeft();
+			arrowStrokes++;
 		}
 		if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN || key == KeyEvent.VK_KP_DOWN)
 		{
 			player.moveDown();
+			arrowStrokes++;
 		}
 		if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_KP_RIGHT)
 		{
 			player.moveRight();
+			arrowStrokes++;
 		}
 		if(orbCount == 100)
 		{
