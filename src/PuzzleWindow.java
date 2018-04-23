@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -91,7 +92,8 @@ public class PuzzleWindow implements ActionListener
 			if(userAnswer.equals(answer))
 			{
 				outputText.setText("Correct");
-				window.dispose();
+				JOptionPane.showMessageDialog(null, "Congratulations, you answered correctly ", "Continue game!", JOptionPane.INFORMATION_MESSAGE);
+				window.dispose(); //close window if puzzle correct
 			}
 			else
 			{
