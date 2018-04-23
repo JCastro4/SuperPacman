@@ -35,7 +35,7 @@ public class Player extends Person
 		this.setSize(Maze.panelSize, Maze.panelSize);
 		Player.setHealth(100);
 		this.attack = 1;
-		
+
 	}
 
 	public void moveLeft() 

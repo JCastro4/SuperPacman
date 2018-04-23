@@ -44,7 +44,7 @@ public class BattleWindow implements ActionListener
 		ghostAttack = new JLabel("<html><font color='white'>Attack Level: " + ghost.getAttack() + "</font></html>");
 		ghostDefence = new JLabel("<html><font color='white'>Defence Level: " + ghost.getDefense() + "</font></html>");
 		ghostAccuracy = new JLabel("<html><font color='white'>Accuracy: " + ghost.getAccuracy() + "</font></html>");
-		
+
 		GridLayout gridLayout = new GridLayout(4, 1);
 		ghostPanel.setLayout(gridLayout);
 		ghostPanel.add(ghostHealth);
@@ -80,7 +80,7 @@ public class BattleWindow implements ActionListener
 		subPanel.add(examineButton);
 		subPanel.add(useItemButton);
 		panel.add(subPanel, BorderLayout.SOUTH);
-		
+
 		ImageIcon image = new ImageIcon("Fighting Scene.jpg");
 		JLabel imageLabel = new JLabel(image);
 		Panel imagePanel = new Panel();
@@ -115,7 +115,7 @@ public class BattleWindow implements ActionListener
 			ghostHealth.setText("<html><font color='white'>Health: " + Integer.toString(Ghost.getHealth()) + "</font></html>");
 			System.out.println("attack");
 		}
-		
+
 		if (e.getSource() == examineButton)
 		{
 			try {
@@ -124,6 +124,6 @@ public class BattleWindow implements ActionListener
 				e1.printStackTrace();
 			}
 		}
-		
+
 	}
 }

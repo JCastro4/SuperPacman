@@ -72,7 +72,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	{
 		// TODO Auto-generated method stub
 		int key = e.getKeyCode();
-		
+
 		//
 		revalidate();
 		repaint();
@@ -85,7 +85,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				|| arrowStrokes == 300 || arrowStrokes == 320 || arrowStrokes == 340 || arrowStrokes == 360)
 		{
 			PuzzleWindow puzzleWindow = new PuzzleWindow();
-//			PuzzleWindow.index++;
+			//			PuzzleWindow.index++;
 		}
 
 		if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
@@ -137,8 +137,6 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 	}
 
-
-
 	public Maze(String str)
 	{
 		maze = new JPanel();
@@ -173,66 +171,6 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		maze.setLayout(null);
 		maze.setFocusable(true);
 		this.setLayout(new BorderLayout());
-
-
-		//		this.setLayout();
-
-		//		maze.addKeyListener(new KeyListener()
-		//		this.addKeyListener(new KeyListener()
-		//		{
-		//
-		//			@Override
-		//			public void keyPressed(KeyEvent e) 
-		//			{
-		//				int key = e.getKeyCode();
-		//
-		//				revalidate();
-		//				repaint();
-		//
-		//				//Navigation commands
-		//
-		//				if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)
-		//				{
-		//					player.moveUp();
-		//				}
-		//				if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT || key == KeyEvent.VK_KP_LEFT)
-		//				{
-		//					player.moveLeft();
-		//				}
-		//				if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN || key == KeyEvent.VK_KP_DOWN)
-		//				{
-		//					player.moveDown();
-		//				}
-		//				if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_KP_RIGHT)
-		//				{
-		//					player.moveRight();
-		//				}
-
-		//				if(player.x == columns-1 && player.y == endLevelLoc)
-		//		if(orbCount == 5)
-		//		{
-		//			JOptionPane.showMessageDialog(null, "Congratulations, you've collected all " + orbCount, "Game Won!", JOptionPane.INFORMATION_MESSAGE);
-		//			dispose();
-		//			new MainMenu();
-		//		}
-		//			}
-
-		//			@Override
-		//			public void keyReleased(KeyEvent arg0) 
-		//			{
-		//				// TODO Auto-generated method stub
-		//
-		//			}
-		//
-		//			@Override
-		//			public void keyTyped(KeyEvent arg0) 
-		//			{
-		//				// TODO Auto-generated method stub
-		//
-		//			}
-		//
-		//		});
-
 		this.addWindowListener(new WindowAdapter()
 		{
 			public void windowClosing(WindowEvent e) 
@@ -302,7 +240,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				{
 					tile.setBackground(Color.RED);
 				}
-				
+
 				/*else if (map[x][y] == 7)
 				{
 					tile.setBackground(Color.yellow);;
@@ -321,15 +259,15 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 					{
 						saveLoadGame.loadGame();
 						player.setLocation((Player.x * panelSize) + 23, (Player.y * panelSize) + 25);
-//						player.setLocation(x,y);
-//						player.setLocation((prevX * panelSize) + 23, (prevY * panelSize) + 25);
-//						Player.x = x;
-//						Player.y = y;
+						//						player.setLocation(x,y);
+						//						player.setLocation((prevX * panelSize) + 23, (prevY * panelSize) + 25);
+						//						Player.x = x;
+						//						Player.y = y;
 					}
-//					if(x == columns - 1)
-//					{
-//						endLevelLoc = y;
-//					}
+					//					if(x == columns - 1)
+					//					{
+					//						endLevelLoc = y;
+					//					}
 				}
 				maze.add(tile);
 				System.out.println("Orbs on map = " + tmpOrbCount);
@@ -376,12 +314,12 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		outputLabel.add(attackLabel, BorderLayout.NORTH);
 		outputLabel.add(healthLabel,BorderLayout.SOUTH);
 		outputLabel.add(orbNumLabel, BorderLayout.EAST);
-//		outputLabel.setOpaque(true);
-		
+		//		outputLabel.setOpaque(true);
+
 		stats.add(outputLabel,BorderLayout.NORTH);
 		stats.add(saveButton,BorderLayout.SOUTH);
-		
-		
+
+
 
 		//stats.add(attack);
 		//stats.setLocation(800, 10);
