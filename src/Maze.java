@@ -88,7 +88,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		{
 			player.moveRight();
 		}
-		if(orbCount == 5)
+		if(orbCount == 100)
 		{
 			JOptionPane.showMessageDialog(null, "Congratulations, you've collected all " + orbCount, "Game Won!", JOptionPane.INFORMATION_MESSAGE);
 			dispose();
@@ -235,6 +235,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 		prevX = 16;
 		prevY = 10;
+		int tmpOrbCount = 0;
 		//Color map
 		for(int y = 0; y < 60; y++)
 		{
@@ -250,6 +251,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				else if (map[x][y] == 2)
 				{
 					tile.setBackground(Color.blue); //blue for orb
+					tmpOrbCount ++;
 
 				}
 				else if (map[x][y] == 3)
@@ -259,6 +261,10 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				else if (map[x][y] == 4)
 				{
 					tile.setBackground(Color.RED);;
+				}
+				else if (map[x][y] == 7)
+				{
+					tile.setBackground(Color.yellow);;
 				}
 				else
 				{
@@ -281,6 +287,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 //					}
 				}
 				maze.add(tile);
+				System.out.println("Orbs on map = " + tmpOrbCount);
 				//				this.add(tile);
 				//this.add((stats), BorderLayout.EAST);
 
@@ -309,7 +316,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		maze.addKeyListener(this);
 		//this.add((maze), BorderLayout.WEST);
 		stats.setSize(600, 200);
-		stats.setBackground(Color.BLUE);
+		stats.setBackground(Color.darkGray);
 		stats.setLayout(new BorderLayout());
 		saveButton.addActionListener(this);
 		saveButton.setSize(20, 20);
@@ -327,7 +334,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 
 		//stats.add(attack);
 		//stats.setLocation(800, 10);
-		maze.setBackground(Color.RED);
+		maze.setBackground(Color.gray);
 		//this.add((stats), BorderLayout.CENTER);
 
 		//this.add((maze), BorderLayout.LINE_START);
