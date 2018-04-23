@@ -40,9 +40,11 @@ public class Player extends Person
 
 	public void moveLeft() 
 	{
-		if((x > 0 && Maze.map[x - 1][y] == 1) || (x > 0 && Maze.map[x - 1][y] == 2)
-				|| (x > 0 && Maze.map[x - 1][y] == 3) || (x > 0 && Maze.map[x - 1][y] == 4)
-				|| (x > 0 && Maze.map[x - 1][y] == 5) && Maze.map[x - 1][y] == 6);
+		if((y < Maze.rows - 1 && Maze.map[x][y + 1] == 1) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 2)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 3) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 4)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 6)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 7)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 8)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 9))
 		{
 			this.setLocation(this.getX() - 10, this.getY());
 			x--;
@@ -90,9 +92,11 @@ public class Player extends Person
 
 	public void moveRight() 
 	{
-		if((x < Maze.columns - 1 && Maze.map[x + 1][y] == 1)  || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 2)
-				|| (x < Maze.columns - 1 && Maze.map[x + 1][y] == 3) || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 4)
-				|| (x < Maze.columns - 1 && Maze.map[x + 1][y] == 5))
+		if((y < Maze.rows - 1 && Maze.map[x][y + 1] == 1) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 2)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 3) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 4)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 6)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 7)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 8)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 9))
 		{
 			this.setLocation(this.getX() + 10, this.getY());
 			x++;
@@ -138,9 +142,11 @@ public class Player extends Person
 
 	public void moveUp() 
 	{
-		if((y > 0 && Maze.map[x][y - 1] == 1) || (y > 0 && Maze.map[x][y - 1] == 2)
-				|| (y > 0 && Maze.map[x][y - 1] == 3) || (y > 0 && Maze.map[x][y - 1] == 4)
-				|| (y > 0 && Maze.map[x][y - 1] == 5))
+		if((y < Maze.rows - 1 && Maze.map[x][y + 1] == 1) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 2)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 3) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 4)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 6)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 7)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 8)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 9))
 		{
 			this.setLocation(this.getX(), this.getY() - 10);
 			y--;
@@ -187,7 +193,9 @@ public class Player extends Person
 	{
 		if((y < Maze.rows - 1 && Maze.map[x][y + 1] == 1) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 2)
 				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 3) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 4)
-				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5))
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 6)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 7)|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 8)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 9))
 		{
 			this.setLocation(this.getX(), this.getY() + 10);
 			y++;
