@@ -6,15 +6,34 @@ import java.util.ArrayList;
 @SuppressWarnings("serial")
 public class Player extends Person
 {
-	protected int x, y;
+	protected static int x;
+	protected static int y;
+	protected static int attack;
+	/**
+	 * @return the attack
+	 */
+	public int getAttack()
+	{
+		return attack;
+	}
+
+	/**
+	 * @param attack the attack to set
+	 */
+	public void setAttack(int attack)
+	{
+		Player.attack = attack;
+	}
+
 	private ArrayList<Items> inventoryList = new ArrayList<Items>(); //ArrayList of items
-//	Ghost ghost = new Ghost();
+	//	Ghost ghost = new Ghost();
 	Maze maze;
 
 	public Player() 
 	{
 		this.setBackground(Color.green);
 		this.setSize(Maze.panelSize, Maze.panelSize);
+		Player.setHealth(100);
 	}
 
 	public void moveLeft() 
@@ -57,19 +76,19 @@ public class Player extends Person
 		else if (Maze.map[x][y] == 9)
 		{
 		}
-		
-		
+
+
 	}
 
 	public void moveRight() 
 	{
 		if((x < Maze.columns - 1 && Maze.map[x + 1][y] == 1)  || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 2)
 				|| (x < Maze.columns - 1 && Maze.map[x + 1][y] == 3) || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 4)
-				 || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 5))
+				|| (x < Maze.columns - 1 && Maze.map[x + 1][y] == 5))
 		{
 			this.setLocation(this.getX() + 10, this.getY());
 			x++;
-			
+
 		}
 		if(Maze.map[x][y] == 2)
 		{
@@ -106,8 +125,8 @@ public class Player extends Person
 	public void moveUp() 
 	{
 		if((y > 0 && Maze.map[x][y - 1] == 1) || (y > 0 && Maze.map[x][y - 1] == 2)
-				 || (y > 0 && Maze.map[x][y - 1] == 3) || (y > 0 && Maze.map[x][y - 1] == 4)
-				 || (y > 0 && Maze.map[x][y - 1] == 5))
+				|| (y > 0 && Maze.map[x][y - 1] == 3) || (y > 0 && Maze.map[x][y - 1] == 4)
+				|| (y > 0 && Maze.map[x][y - 1] == 5))
 		{
 			this.setLocation(this.getX(), this.getY() - 10);
 			y--;
@@ -147,12 +166,12 @@ public class Player extends Person
 	public void moveDown() 
 	{
 		if((y < Maze.rows - 1 && Maze.map[x][y + 1] == 1) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 2)
-				 || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 3) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 4)
-				 || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5))
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 3) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 4)
+				|| (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5))
 		{
 			this.setLocation(this.getX(), this.getY() + 10);
 			y++;
-			
+
 			if(Maze.map[x][y] == 2)
 			{
 				Maze.map[x][y] = 1;
@@ -208,12 +227,12 @@ public class Player extends Person
 	/* (non-Javadoc)
 	 * @see Person#receiveDamage()
 	 */
-//	@Override
-//	public void receiveDamage()
-//	{
-//		setHealth(getHealth() - );
-//		
-//	}
+	//	@Override
+	//	public void receiveDamage()
+	//	{
+	//		setHealth(getHealth() - );
+	//		
+	//	}
 
 	/**
 	 * @return the inventoryList
@@ -230,7 +249,7 @@ public class Player extends Person
 	{
 		this.inventoryList = inventoryList;
 	}
-	
+
 	public void autoPickupItems(int item)
 	{
 		if(item == 2)
