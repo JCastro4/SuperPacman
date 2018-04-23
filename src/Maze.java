@@ -43,6 +43,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	public JPanel stats ;
 	protected static JLabel attackLabel;
 	protected static JLabel healthLabel;
+	protected static JLabel orbNumLabel;
 	public JButton saveButton = new JButton("Save Game");
 
 	/* (non-Javadoc)
@@ -128,6 +129,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		player = new Player();
 		attackLabel = new JLabel();
 		healthLabel = new JLabel();
+		orbNumLabel = new JLabel();
 		
 		outputLabel = new JPanel();
 		//		setFocusable(true);
@@ -317,9 +319,11 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		saveButton.setSize(20, 20);
 		attackLabel.setText("Attack: " + player.getAttack());
 		healthLabel.setText("Health: " + Player.getHealth());
+		orbNumLabel.setText("Orbs: " + Maze.orbCount);
 		outputLabel.setLayout(new BorderLayout());
 		outputLabel.add(attackLabel, BorderLayout.NORTH);
 		outputLabel.add(healthLabel,BorderLayout.SOUTH);
+		outputLabel.add(orbNumLabel, BorderLayout.EAST);
 //		outputLabel.setOpaque(true);
 		
 		stats.add(outputLabel,BorderLayout.NORTH);
