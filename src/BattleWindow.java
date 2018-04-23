@@ -1,12 +1,17 @@
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.TilePane;
 
 
 
@@ -23,17 +28,50 @@ public class BattleWindow implements ActionListener
 	JPanel subPanel = new JPanel();
 	
 	JPanel ghostPanel = new JPanel();
-	JLabel ghostHealth;
+	JPanel playerPanel = new JPanel();
+	JLabel ghostHealth, ghostAttack, ghostDefence, ghostAccuracy,
+			playerHealth, playerAttack, playerDefence, title;
 
-	public BattleWindow(Ghost ghost)
+	public BattleWindow(Ghost ghost, Player player)
 	{
 		window.setSize(500, 690);
 		panel.setLayout(new BorderLayout());
 		attackButton.addActionListener(this);
 		window.add(panel);
-		//ghostInfo
-		ghostHealth = new JLabel("Health: " + );
 		
+		//ghostInfo
+		ghostHealth = new JLabel("Health: " + ghost.getHealth());
+		ghostAttack = new JLabel("Attack Level: " + ghost.getAttack());
+		ghostDefence = new JLabel("Defence Level: " + ghost.getDefense());
+		ghostAccuracy = new JLabel("Accuracy: " + ghost.getAccuracy());
+		
+		GridLayout gridLayout = new GridLayout(4, 1);
+		ghostPanel.setLayout(gridLayout);
+		ghostPanel.add(ghostHealth);
+		ghostPanel.add(ghostAttack);
+		ghostPanel.add(ghostDefence);
+		ghostPanel.add(ghostAccuracy);
+		panel.add(ghostPanel, BorderLayout.EAST);
+		
+		//playerinfo
+		playerHealth = new JLabel("Health: " + player.getHealth());
+		playerAttack = new JLabel("Attack: " + player.getAttack());
+		playerDefence = new JLabel("Defence: " + player.getDefense());
+
+		
+		playerPanel.setLayout(gridLayout);
+		playerPanel.add(playerHealth);
+		playerPanel.add(playerAttack);
+		playerPanel.add(playerDefence);
+		panel.add(playerPanel, BorderLayout.WEST);
+		
+		JPanel titlePane = new JPanel();
+		titlePane.setLayout(new GridLayout(1, 3));
+		title = new JLabel("Battle against " + ghost.getName());
+		titlePane.add(new JLabel(""));
+		titlePane.add(title);
+		titlePane.add(new JLabel(""));
+		panel.add(titlePane, BorderLayout.NORTH);
 		
 		subPanel.add(attackButton);
 	    subPanel.add(fleeButton);
