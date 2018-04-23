@@ -42,7 +42,7 @@ public class BattleWindow implements ActionListener
 		ghostAttack = new JLabel("<html><font color='white'>Attack Level: " + ghost.getAttack() + "</font></html>");
 		ghostDefence = new JLabel("<html><font color='white'>Defence Level: " + ghost.getDefense() + "</font></html>");
 		ghostAccuracy = new JLabel("<html><font color='white'>Accuracy: " + ghost.getAccuracy() + "</font></html>");
-
+		
 		GridLayout gridLayout = new GridLayout(4, 1);
 		ghostPanel.setLayout(gridLayout);
 		ghostPanel.add(ghostHealth);

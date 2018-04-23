@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public abstract class Person extends JPanel
 {
-	private static int health = 50;
+	private static int health;
 	private int attack;
 	private int defense;
 	private String name;

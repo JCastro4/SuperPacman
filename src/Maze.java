@@ -45,6 +45,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	protected static JLabel healthLabel;
 	protected static JLabel orbNumLabel;
 	public JButton saveButton = new JButton("Save Game");
+	SaveLoadGame saveLoadGame = new SaveLoadGame();
 
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
@@ -55,8 +56,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		// TODO Auto-generated method stub
 		if(e1.getSource() == saveButton)
 		{
-			SaveLoadGame saveLoadGame = new SaveLoadGame();
-			saveLoadGame.saveGame(Player.getHealth(), player.getAttack(), getX(),getY());
+			saveLoadGame.saveGame(Player.getHealth(), player.getAttack(), Player.x, Player.y);
 			System.out.println("Saved Game");
 			System.exit(0);
 		}
@@ -127,14 +127,13 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	public Maze(String str)
 	{
 		maze = new JPanel();
-
 		stats = new JPanel();
 		player = new Player();
 		attackLabel = new JLabel();
 		healthLabel = new JLabel();
 		orbNumLabel = new JLabel();
-		
 		outputLabel = new JPanel();
+		player.setAttack(0);
 		//		setFocusable(true);
 		try
 		{
@@ -249,7 +248,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 			{
 				tile = new Tile(x, y); // Displays green tile for player
 				tile.setSize(panelSize, panelSize);
-				tile.setLocation((x*panelSize) + 23, (y*panelSize) + 25);
+				tile.setLocation((x * panelSize) + 23, (y * panelSize) + 25);
 				if(map[x][y] == 0)
 				{
 					tile.setBackground(Color.BLACK);
@@ -301,12 +300,16 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 					{
 						//Initialize player location at start of game.
 						player.setLocation((x * panelSize) + 23, (y * panelSize) + 25);
-						player.y = y;
+						Player.y = y;
 					}
-					else if (x == 0 && loadGame)
+					else if (loadGame)
 					{
-						player.setLocation((prevX * panelSize) + 23, (prevY * panelSize) + 25);
-						player.y = y;
+						saveLoadGame.loadGame();
+						player.setLocation((x * panelSize) + 23, (y * panelSize) + 25);
+//						player.setLocation(x,y);
+//						player.setLocation((prevX * panelSize) + 23, (prevY * panelSize) + 25);
+						Player.x = x;
+						Player.y = y;
 					}
 //					if(x == columns - 1)
 //					{
