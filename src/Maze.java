@@ -305,11 +305,11 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 					else if (loadGame)
 					{
 						saveLoadGame.loadGame();
-						player.setLocation((x * panelSize) + 23, (y * panelSize) + 25);
+						player.setLocation((Player.x * panelSize) + 23, (Player.y * panelSize) + 25);
 //						player.setLocation(x,y);
 //						player.setLocation((prevX * panelSize) + 23, (prevY * panelSize) + 25);
-						Player.x = x;
-						Player.y = y;
+//						Player.x = x;
+//						Player.y = y;
 					}
 //					if(x == columns - 1)
 //					{
