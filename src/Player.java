@@ -36,6 +36,23 @@ public class Player extends Person
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde);
 		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
+		}
+		
+		
 	}
 
 	public void moveRight() 
@@ -57,6 +74,21 @@ public class Player extends Person
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde);
 		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
+		}
 	}
 
 	public void moveUp() 
@@ -76,6 +108,21 @@ public class Player extends Person
 		{
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde);
+		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
 		}
 	}
 
@@ -98,6 +145,21 @@ public class Player extends Person
 		{
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde);
+		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
 		}
 	}
 
