@@ -43,7 +43,7 @@ public class BattleWindow implements ActionListener
 
 		ghostHealth = new JLabel("Health: " + ghost.getHealth());
 		ghostAttack = new JLabel("Attack Level: " + ghost.getAttack());
-		ghostDefence = new JLabel("Defence Level: " + ghost.getDefense());
+		ghostDefence = new JLabel("Defense Level: " + ghost.getDefense());
 		ghostAccuracy = new JLabel("Accuracy: " + ghost.getAccuracy());
 		
 		GridLayout gridLayout = new GridLayout(4, 1);
@@ -57,7 +57,7 @@ public class BattleWindow implements ActionListener
 		//playerinfo
 		playerHealth = new JLabel("Health: " + player.getHealth());
 		playerAttack = new JLabel("Attack: " + player.getAttack());
-		playerDefence = new JLabel("Defence: " + player.getDefense());
+		playerDefence = new JLabel("Defense: " + player.getDefense());
 
 		
 		playerPanel.setLayout(gridLayout);
