@@ -265,7 +265,6 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				{
 					tile.setBackground(Color.RED);
 				}
-<<<<<<< HEAD
 				else if (map[x][y] == 5)
 				{
 					tile.setBackground(Color.RED);
@@ -287,12 +286,10 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 					tile.setBackground(Color.RED);
 				}
 				
-=======
-				else if (map[x][y] == 7)
+				/*else if (map[x][y] == 7)
 				{
 					tile.setBackground(Color.yellow);;
-				}
->>>>>>> 89265559edf620b576dde5f03a2b36c490cd8b51
+				}*/
 				else
 				{
 					tile.setBackground(Color.WHITE);
@@ -343,12 +340,11 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		maze.addKeyListener(this);
 		//this.add((maze), BorderLayout.WEST);
 		stats.setSize(600, 200);
-<<<<<<< HEAD
+
 		stats.setBorder(new EmptyBorder(10, 10, 10, 300));
-		stats.setBackground(Color.BLUE);
-=======
+		//stats.setBackground(Color.BLUE);
 		stats.setBackground(Color.darkGray);
->>>>>>> 89265559edf620b576dde5f03a2b36c490cd8b51
+		//stats.setBackground(Color.darkGray);
 		stats.setLayout(new BorderLayout());
 		saveButton.addActionListener(this);
 		saveButton.setSize(20, 20);
