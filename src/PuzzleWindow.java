@@ -41,6 +41,7 @@ public class PuzzleWindow implements ActionListener
 		try
 		{
 			puzzles.loadPuzzle();
+			index++;
 		}
 		catch (IOException e)
 		{

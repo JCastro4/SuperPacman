@@ -11,9 +11,13 @@
  */
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Stack;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 import jdk.nashorn.internal.ir.WhileNode;
@@ -36,10 +40,10 @@ public class Puzzles {
 //	Stack<String> hintList = new Stack<>();
 //	Stack<String> solutionList = new Stack<>();
 //	Stack<String> puzzles = new Stack<>();
-	PriorityQueue<String> puzzleList = new PriorityQueue<>();
-	Stack<String> hintList = new Stack<>();
-	Stack<String> solutionList = new Stack<>();
-	Stack<String> puzzles = new Stack<>();
+	ArrayList<String> puzzleList = new ArrayList<>();
+	ArrayList<String> hintList = new ArrayList<>();
+	ArrayList<String> solutionList = new ArrayList<>();
+	ArrayList<String> puzzles = new ArrayList<>();
 
 	//	public Puzzles(int puzzleID, String description, String hint, String solution)
 	//	{
@@ -125,11 +129,14 @@ public class Puzzles {
 		int i = 0;
 		do
 		{
-			puzzles.add(puzzleList.poll());
-			hintList.add(puzzleList.poll());
-			solutionList.add(puzzleList.poll());
+			puzzles.add(puzzleList.remove(i));
+			hintList.add(puzzleList.remove(i));
+			solutionList.add(puzzleList.remove(i));
 		}
 		while(!puzzleList.isEmpty());
+		System.out.println("puzzles " + puzzles);
+		System.out.println("hintList " + hintList);
+		System.out.println("solutionList " + solutionList);
 		//	while(br.readLine() != null);
 
 		in.close();
