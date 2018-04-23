@@ -1,19 +1,17 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
 
-import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.TilePane;
-
-
 
 public class BattleWindow implements ActionListener
 {
@@ -26,77 +24,88 @@ public class BattleWindow implements ActionListener
 	JButton examineButton = new JButton("Examine");
 	JButton useItemButton = new JButton("Use item");
 	JPanel subPanel = new JPanel();
-	
+
 	JPanel ghostPanel = new JPanel();
 	JPanel playerPanel = new JPanel();
-	JLabel ghostHealth, ghostAttack, ghostDefence, ghostAccuracy,
-			playerHealth, playerAttack, playerDefence, title;
+	JLabel ghostHealth, ghostAttack, ghostDefence, ghostAccuracy, playerHealth, playerAttack, playerDefence, title;
 
 	public BattleWindow(Ghost ghost, Player player)
 	{
-		window.setSize(500, 690);
+		window.setSize(700, 500);
 		panel.setLayout(new BorderLayout());
 		attackButton.addActionListener(this);
 		window.add(panel);
-		
-		//ghostInfo
 
-		ghostHealth = new JLabel("Health: " + ghost.getHealth());
-		ghostAttack = new JLabel("Attack Level: " + ghost.getAttack());
-		ghostDefence = new JLabel("Defence Level: " + ghost.getDefense());
-		ghostAccuracy = new JLabel("Accuracy: " + ghost.getAccuracy());
-		
+		// ghostInfo
+
+		ghostHealth = new JLabel("<html><font color='white'>Health: " + ghost.getHealth() + "</font></html>");
+		ghostAttack = new JLabel("<html><font color='white'>Attack Level: " + ghost.getAttack() + "</font></html>");
+		ghostDefence = new JLabel("<html><font color='white'>Defence Level: " + ghost.getDefense() + "</font></html>");
+		ghostAccuracy = new JLabel("<html><font color='white'>Accuracy: " + ghost.getAccuracy() + "</font></html>");
+
 		GridLayout gridLayout = new GridLayout(4, 1);
 		ghostPanel.setLayout(gridLayout);
 		ghostPanel.add(ghostHealth);
 		ghostPanel.add(ghostAttack);
 		ghostPanel.add(ghostDefence);
 		ghostPanel.add(ghostAccuracy);
+		ghostPanel.setBackground(Color.DARK_GRAY);
 		panel.add(ghostPanel, BorderLayout.EAST);
-		
-		//playerinfo
-		playerHealth = new JLabel("Health: " + player.getHealth());
-		playerAttack = new JLabel("Attack: " + player.getAttack());
-		playerDefence = new JLabel("Defence: " + player.getDefense());
 
-		
+		// playerinfo
+		playerHealth = new JLabel("<html><font color='white'>Health: " + player.getHealth() + "</font></html>");
+		playerAttack = new JLabel("<html><font color='white'>Attack: " + player.getAttack() + "</font></html>");
+		playerDefence = new JLabel("<html><font color='white'>Defence: " + player.getDefense() + "</font></html>");
+
 		playerPanel.setLayout(gridLayout);
 		playerPanel.add(playerHealth);
 		playerPanel.add(playerAttack);
 		playerPanel.add(playerDefence);
+		playerPanel.setBackground(Color.DARK_GRAY);
 		panel.add(playerPanel, BorderLayout.WEST);
-		
-		JPanel titlePane = new JPanel();
-		titlePane.setLayout(new GridLayout(1, 3));
-		title = new JLabel("Battle against " + ghost.getName());
-		titlePane.add(new JLabel(""));
-		titlePane.add(title);
-		titlePane.add(new JLabel(""));
-		panel.add(titlePane, BorderLayout.NORTH);
-		
+
+		JPanel titlePanel = new JPanel();
+		titlePanel.setLayout(new GridLayout(1, 3));
+		title = new JLabel("<html><font color='white'>Battle against " + ghost.getName() + "</font></html>");
+		titlePanel.add(new JLabel(""));
+		titlePanel.add(title);
+		titlePanel.add(new JLabel(""));
+		titlePanel.setBackground(Color.DARK_GRAY);
+		panel.add(titlePanel, BorderLayout.NORTH);
+
 		subPanel.add(attackButton);
-	    subPanel.add(fleeButton);
-	    subPanel.add(examineButton);
-	    subPanel.add(useItemButton); 
-	    panel.add(subPanel, BorderLayout.SOUTH);
-	    
-	    
-	    window.setLocationRelativeTo(null);
-	    window.setVisible(true);
-	    
+		subPanel.add(fleeButton);
+		subPanel.add(examineButton);
+		subPanel.add(useItemButton);
+		panel.add(subPanel, BorderLayout.SOUTH);
+		
+		ImageIcon image = new ImageIcon("Fighting Scene.jpg");
+		JLabel imageLabel = new JLabel(image);
+		Panel imagePanel = new Panel();
+		imagePanel.add(imageLabel);
+		panel.add(imagePanel, BorderLayout.CENTER);
+
+		subPanel.setBackground(Color.DARK_GRAY);
+		panel.setBackground(Color.DARK_GRAY);
+		window.setLocationRelativeTo(null);
+		window.setVisible(true);
+
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
 		// TODO Auto-generated method stub
-		if(e.getSource() == attackButton)
+		if (e.getSource() == attackButton)
 		{
 			System.out.println("attack");
 		}
-		
-	}	
+
+	}
 }
