@@ -50,12 +50,15 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e)
+	public void actionPerformed(ActionEvent e1)
 	{
 		// TODO Auto-generated method stub
-		if(e.getSource() == saveButton)
+		if(e1.getSource() == saveButton)
 		{
+			SaveLoadGame saveLoadGame = new SaveLoadGame();
+			saveLoadGame.saveGame(Player.getHealth(), player.getAttack(), getX(),getY());
 			System.out.println("Saved Game");
+			System.exit(0);
 		}
 
 	}
@@ -254,7 +257,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				else if (map[x][y] == 2)
 				{
 					tile.setBackground(Color.blue); //blue for orb
-					tmpOrbCount ++;
+					tmpOrbCount ++;//counts orbs on map for debugging
 
 				}
 				else if (map[x][y] == 3)
