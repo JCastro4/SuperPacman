@@ -32,7 +32,7 @@ public class BattleWindow implements ActionListener
 		attackButton.addActionListener(this);
 		window.add(panel);
 		//ghostInfo
-		ghostHealth = new JLabel("Health: " + );
+		ghostHealth = new JLabel("Health: "  );
 		
 		
 		subPanel.add(attackButton);
