@@ -78,11 +78,11 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		repaint();
 
 		//Navigation commands
-		if(arrowStrokes == 10 || arrowStrokes == 20 || arrowStrokes == 30 || arrowStrokes == 40 
-				|| arrowStrokes == 50 || arrowStrokes == 60 || arrowStrokes == 70 || arrowStrokes == 80
-				|| arrowStrokes == 90 || arrowStrokes == 100 || arrowStrokes == 110 || arrowStrokes == 120
-				|| arrowStrokes == 130 || arrowStrokes == 140 || arrowStrokes == 150 || arrowStrokes == 160
-				|| arrowStrokes == 170 || arrowStrokes == 180 || arrowStrokes == 190 || arrowStrokes == 200)
+		if(arrowStrokes == 20 || arrowStrokes == 40 || arrowStrokes == 60 
+				|| arrowStrokes == 80 || arrowStrokes == 100 || arrowStrokes == 120 || arrowStrokes == 130
+				|| arrowStrokes == 140 || arrowStrokes == 160 || arrowStrokes == 180 || arrowStrokes == 200
+				|| arrowStrokes == 220 || arrowStrokes == 240 || arrowStrokes == 260 || arrowStrokes == 280
+				|| arrowStrokes == 300 || arrowStrokes == 320 || arrowStrokes == 340 || arrowStrokes == 360)
 		{
 			PuzzleWindow puzzleWindow = new PuzzleWindow();
 //			PuzzleWindow.index++;

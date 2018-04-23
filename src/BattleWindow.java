@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -105,6 +106,11 @@ public class BattleWindow implements ActionListener
 		// TODO Auto-generated method stub
 		if (e.getSource() == attackButton)
 		{
+			if(Ghost.getHealth() < 0)
+			{
+				JOptionPane.showMessageDialog(null, "You defeated the ghost", "Continue game!", JOptionPane.INFORMATION_MESSAGE);
+				window.dispose();//closes window
+			}
 			Ghost.setHealth((int)(Ghost.getHealth() - (20 * .25)));
 			ghostHealth.setText("<html><font color='white'>Health: " + Integer.toString(Ghost.getHealth()) + "</font></html>");
 			System.out.println("attack");
