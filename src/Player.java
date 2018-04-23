@@ -56,27 +56,33 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
-			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
-			BattleWindow battleWindow = new BattleWindow(clyde, this);
+			Ghost pinky = new Ghost("Pinky", "Pink", "description", 100, 80, 60, 50/50);
+			BattleWindow battleWindow = new BattleWindow(pinky, this);
 		}
 		else if (Maze.map[x][y] == 5)
-		{
-			Ghost inky = new Ghost("Inky", "cyan", "description", 75, 60, 40, 40/60);
-			BattleWindow battleWindow = new BattleWindow(inky, this);
-		}
-		else if (Maze.map[x][y] == 6)
 		{
 			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
+		else if (Maze.map[x][y] == 6)
+		{
+			Ghost inky = new Ghost("Inky", "cyan", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(inky, this);
+		}
 		else if (Maze.map[x][y] == 7)
 		{
+			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(clyde, this);
 		}
 		else if (Maze.map[x][y] == 8)
 		{
+			Ghost blueGhost1 = new Ghost("Blue Ghost 1", "blue", "description", 50, 50, 30, 30/70);
+			BattleWindow battleWindow = new BattleWindow(blueGhost1, this);
 		}
 		else if (Maze.map[x][y] == 9)
 		{
+			Ghost blueGhost2 = new Ghost("Blue Ghost 2", "blue", "description", 50, 50, 30, 30/70);
+			BattleWindow battleWindow = new BattleWindow(blueGhost2, this);
 		}
 
 
@@ -100,27 +106,33 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
-			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
-			BattleWindow battleWindow = new BattleWindow(clyde, this);
+			Ghost pinky = new Ghost("Pinky", "Pink", "description", 100, 80, 60, 50/50);
+			BattleWindow battleWindow = new BattleWindow(pinky, this);
 		}
 		else if (Maze.map[x][y] == 5)
-		{
-			Ghost inky = new Ghost("Inky", "cyan", "description", 75, 60, 40, 40/60);
-			BattleWindow battleWindow = new BattleWindow(inky, this);
-		}
-		else if (Maze.map[x][y] == 6)
 		{
 			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
+		else if (Maze.map[x][y] == 6)
+		{
+			Ghost inky = new Ghost("Inky", "cyan", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(inky, this);
+		}
 		else if (Maze.map[x][y] == 7)
 		{
+			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(clyde, this);
 		}
 		else if (Maze.map[x][y] == 8)
 		{
+			Ghost blueGhost1 = new Ghost("Blue Ghost 1", "blue", "description", 50, 50, 30, 30/70);
+			BattleWindow battleWindow = new BattleWindow(blueGhost1, this);
 		}
 		else if (Maze.map[x][y] == 9)
 		{
+			Ghost blueGhost2 = new Ghost("Blue Ghost 2", "blue", "description", 50, 50, 30, 30/70);
+			BattleWindow battleWindow = new BattleWindow(blueGhost2, this);
 		}
 	}
 
@@ -190,27 +202,33 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
-			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
-			BattleWindow battleWindow = new BattleWindow(clyde, this);
+			Ghost pinky = new Ghost("Pinky", "Pink", "description", 100, 80, 60, 50/50);
+			BattleWindow battleWindow = new BattleWindow(pinky, this);
 		}
 		else if (Maze.map[x][y] == 5)
-		{
-			Ghost inky = new Ghost("Inky", "cyan", "description", 75, 60, 40, 40/60);
-			BattleWindow battleWindow = new BattleWindow(inky, this);
-		}
-		else if (Maze.map[x][y] == 6)
 		{
 			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
+		else if (Maze.map[x][y] == 6)
+		{
+			Ghost inky = new Ghost("Inky", "cyan", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(inky, this);
+		}
 		else if (Maze.map[x][y] == 7)
 		{
+			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(clyde, this);
 		}
 		else if (Maze.map[x][y] == 8)
 		{
+			Ghost blueGhost1 = new Ghost("Blue Ghost 1", "blue", "description", 50, 50, 30, 30/70);
+			BattleWindow battleWindow = new BattleWindow(blueGhost1, this);
 		}
 		else if (Maze.map[x][y] == 9)
 		{
+			Ghost blueGhost2 = new Ghost("Blue Ghost 2", "blue", "description", 50, 50, 30, 30/70);
+			BattleWindow battleWindow = new BattleWindow(blueGhost2, this);
 		}
 	}
 
