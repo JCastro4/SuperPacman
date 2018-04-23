@@ -112,7 +112,7 @@ public class Ghost extends Person
 	
 	
 	
-	public void loadGhost(String monster) throws IOException
+	public static void loadGhost() throws IOException
 	{
 		
 	

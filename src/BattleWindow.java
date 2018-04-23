@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Observable;
 
 import javax.swing.ImageIcon;
@@ -108,6 +109,15 @@ public class BattleWindow implements ActionListener
 			ghostHealth.setText("<html><font color='white'>Health: " + Integer.toString(Ghost.getHealth()) + "</font></html>");
 			System.out.println("attack");
 		}
-
+		
+		if (e.getSource() == examineButton)
+		{
+			try {
+				Ghost.loadGhost();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		
 	}
 }
