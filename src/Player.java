@@ -45,6 +45,8 @@ public class Player extends Person
 		}
 		else if (Maze.map[x][y] == 6)
 		{
+			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
 		else if (Maze.map[x][y] == 7)
 		{
@@ -87,6 +89,8 @@ public class Player extends Person
 		}
 		else if (Maze.map[x][y] == 6)
 		{
+			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
 		else if (Maze.map[x][y] == 7)
 		{
@@ -126,6 +130,8 @@ public class Player extends Person
 		}
 		else if (Maze.map[x][y] == 6)
 		{
+			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
 		else if (Maze.map[x][y] == 7)
 		{
@@ -167,6 +173,8 @@ public class Player extends Person
 		}
 		else if (Maze.map[x][y] == 6)
 		{
+			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
 		else if (Maze.map[x][y] == 7)
 		{
