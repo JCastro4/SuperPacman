@@ -19,7 +19,9 @@ public class Player extends Person
 
 	public void moveLeft() 
 	{
-		if(x > 0 && Maze.map[x - 1][y] != 0)
+		if((x > 0 && Maze.map[x - 1][y] == 1) || (x > 0 && Maze.map[x - 1][y] == 2)
+				|| (x > 0 && Maze.map[x - 1][y] == 3) || (x > 0 && Maze.map[x - 1][y] == 4)
+				|| (x > 0 && Maze.map[x - 1][y] == 5))
 		{
 			this.setLocation(this.getX() - 10, this.getY());
 			x--;
@@ -36,11 +38,30 @@ public class Player extends Person
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde, this);
 		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
+		}
+		
+		
 	}
 
 	public void moveRight() 
 	{
-		if(x < Maze.columns - 1 && Maze.map[x + 1][y] != 0)
+		if((x < Maze.columns - 1 && Maze.map[x + 1][y] == 1)  || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 2)
+				|| (x < Maze.columns - 1 && Maze.map[x + 1][y] == 3) || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 4)
+				 || (x < Maze.columns - 1 && Maze.map[x + 1][y] == 5))
 		{
 			this.setLocation(this.getX() + 10, this.getY());
 			x++;
@@ -57,11 +78,28 @@ public class Player extends Person
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde, this);
 		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
+		}
 	}
 
 	public void moveUp() 
 	{
-		if(y > 0 && Maze.map[x][y - 1] != 0)
+		if((y > 0 && Maze.map[x][y - 1] == 1) || (y > 0 && Maze.map[x][y - 1] == 2)
+				 || (y > 0 && Maze.map[x][y - 1] == 3) || (y > 0 && Maze.map[x][y - 1] == 4)
+				 || (y > 0 && Maze.map[x][y - 1] == 5))
 		{
 			this.setLocation(this.getX(), this.getY() - 10);
 			y--;
@@ -77,11 +115,28 @@ public class Player extends Person
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde, this);
 		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
+		}
 	}
 
 	public void moveDown() 
 	{
-		if(y < Maze.rows - 1 && Maze.map[x][y + 1] != 0)
+		if((y < Maze.rows - 1 && Maze.map[x][y + 1] == 1) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 2)
+				 || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 3) || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 4)
+				 || (y < Maze.rows - 1 && Maze.map[x][y + 1] == 5))
 		{
 			this.setLocation(this.getX(), this.getY() + 10);
 			y++;
@@ -98,6 +153,21 @@ public class Player extends Person
 		{
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde, this);
+		}
+		else if (Maze.map[x][y] == 5)
+		{
+		}
+		else if (Maze.map[x][y] == 6)
+		{
+		}
+		else if (Maze.map[x][y] == 7)
+		{
+		}
+		else if (Maze.map[x][y] == 8)
+		{
+		}
+		else if (Maze.map[x][y] == 9)
+		{
 		}
 	}
 
@@ -122,12 +192,12 @@ public class Player extends Person
 	/* (non-Javadoc)
 	 * @see Person#receiveDamage()
 	 */
-	@Override
-	public void receiveDamage()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void receiveDamage()
+//	{
+//		setHealth(getHealth() - );
+//		
+//	}
 
 	/**
 	 * @return the inventoryList

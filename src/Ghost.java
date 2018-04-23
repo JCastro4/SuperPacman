@@ -90,12 +90,12 @@ public class Ghost extends Person
 	/* (non-Javadoc)
 	 * @see Person#receiveDamage()
 	 */
-	@Override
-	public void receiveDamage()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void receiveDamage()
+//	{
+//		// TODO Auto-generated method stub
+//		
+//	}
 	public void createGhosts() // Create Ghosts needed
 	{
 		Ghost Clyde = new Ghost("Clyde", "orange", description, 75, 60, 40, 40/60);
