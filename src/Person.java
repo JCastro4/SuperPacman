@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public abstract class Person extends JPanel
 {
-	private static int health;
+	private static int health = 50;
 	private int attack;
 	private int defense;
 	private String name;
@@ -65,7 +65,7 @@ public abstract class Person extends JPanel
 	
 	public abstract void attack();
 	public abstract void dealDamage(int attack);
-	public abstract void receiveDamage();
+//	public abstract void receiveDamage();
 	
 	/*Might require a update class if user collects more orb's the attack, health, defense will all change. 
 	 * Might need deal damage/ receive damage 
