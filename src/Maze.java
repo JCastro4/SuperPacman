@@ -259,31 +259,10 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 					{
 						saveLoadGame.loadGame();
 						player.setLocation((Player.x * panelSize) + 23, (Player.y * panelSize) + 25);
-						//						player.setLocation(x,y);
-						//						player.setLocation((prevX * panelSize) + 23, (prevY * panelSize) + 25);
-						//						Player.x = x;
-						//						Player.y = y;
 					}
-					//					if(x == columns - 1)
-					//					{
-					//						endLevelLoc = y;
-					//					}
 				}
 				maze.add(tile);
 				System.out.println("Orbs on map = " + tmpOrbCount);
-				//				this.add(tile);
-				//this.add((stats), BorderLayout.EAST);
-
-
-
-
-				//this.setLayout(new BorderLayout());
-				//this.add((tile), BorderLayout.WEST);
-
-
-				//stats.setLayout(new BorderLayout());
-				//stats.setAlignmentY(RIGHT_ALIGNMENT);
-				//tile.setVisible(true);
 			}
 		}
 
@@ -310,35 +289,15 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 		attackLabel.setText("Attack: " + player.getAttack());
 		healthLabel.setText("Health: " + Player.getHealth());
 		orbNumLabel.setText("Orbs: " + Maze.orbCount);
-		outputLabel.setLayout(new BorderLayout());
-		outputLabel.add(attackLabel, BorderLayout.NORTH);
-		outputLabel.add(healthLabel,BorderLayout.SOUTH);
-		outputLabel.add(orbNumLabel, BorderLayout.EAST);
-		//		outputLabel.setOpaque(true);
-
+		outputLabel.setLayout(new FlowLayout());
+		outputLabel.add(attackLabel);
+		outputLabel.add(healthLabel);
+		outputLabel.add(orbNumLabel);
 		stats.add(outputLabel,BorderLayout.NORTH);
 		stats.add(saveButton,BorderLayout.SOUTH);
-
-
-
-		//stats.add(attack);
-		//stats.setLocation(800, 10);
 		maze.setBackground(Color.gray);
-		//this.add((stats), BorderLayout.CENTER);
-
-		//this.add((maze), BorderLayout.LINE_START);
-		//this.add(maze);
-
-		//		maze.add(tile);
 		this.add(maze,BorderLayout.CENTER);
 		this.add(stats,BorderLayout.LINE_END);
-		//		maze.add(stats);
-		//		this.add(maze);
-		//		this.add(stats);
-		//stats.add(attack);
-
-		//this.add((stats), BorderLayout.LINE_END);
-		//this.add(tile);
 		player.setVisible(true);
 		healthLabel.setVisible(true);
 		attackLabel.setVisible(true);
