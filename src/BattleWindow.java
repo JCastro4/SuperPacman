@@ -104,8 +104,8 @@ public class BattleWindow implements ActionListener
 		// TODO Auto-generated method stub
 		if (e.getSource() == attackButton)
 		{
-			Ghost.setHealth((int)(Ghost.getHealth() - (Player.attack * .25)));
-			ghostHealth.setText(Integer.toString(Ghost.getHealth()));
+			Ghost.setHealth((int)(Ghost.getHealth() - (20 * .25)));
+			ghostHealth.setText("<html><font color='white'>Health: " + Integer.toString(Ghost.getHealth()) + "</font></html>");
 			System.out.println("attack");
 		}
 
