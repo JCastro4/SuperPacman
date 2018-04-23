@@ -261,8 +261,29 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				}
 				else if (map[x][y] == 4)
 				{
-					tile.setBackground(Color.RED);;
+					tile.setBackground(Color.RED);
 				}
+				else if (map[x][y] == 5)
+				{
+					tile.setBackground(Color.RED);
+				}
+				else if (map[x][y] == 6)
+				{
+					tile.setBackground(Color.RED);
+				}
+				else if (map[x][y] == 7)
+				{
+					tile.setBackground(Color.RED);
+				}
+				else if (map[x][y] == 8)
+				{
+					tile.setBackground(Color.RED);
+				}
+				else if (map[x][y] == 9)
+				{
+					tile.setBackground(Color.RED);
+				}
+				
 				else
 				{
 					tile.setBackground(Color.WHITE);
