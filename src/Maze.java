@@ -85,6 +85,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 				|| arrowStrokes == 170 || arrowStrokes == 180 || arrowStrokes == 190 || arrowStrokes == 200)
 		{
 			PuzzleWindow puzzleWindow = new PuzzleWindow();
+			PuzzleWindow.index++;
 		}
 
 		if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP || key == KeyEvent.VK_KP_UP)

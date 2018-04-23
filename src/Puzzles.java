@@ -80,9 +80,9 @@ public class Puzzles {
 		this.hint = hint;
 	}
 
-	public String getSolution()
+	public String getSolution(int index)
 	{
-		return solution;
+		return solutionList.get(index);
 	}
 
 	public void setSolution(String solution)

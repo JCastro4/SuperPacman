@@ -27,17 +27,17 @@ public class PuzzleWindow implements ActionListener
 	JTextField inputText = new JTextField();
 	JButton solveButton = new JButton("Solve");
 	JButton hintButton = new JButton("Hint");
-//	JButton examineButton = new JButton("Examine");
-//	JButton useItemButton = new JButton("Use item");
+	//	JButton examineButton = new JButton("Examine");
+	//	JButton useItemButton = new JButton("Use item");
 	JPanel subPanel = new JPanel();
 	String puzzle;
 	String hint;
 	String answer;
-	int index = 0;
+	static int index = 0;
 	Puzzles puzzles = new Puzzles();
 	public PuzzleWindow()
 	{
-//		Puzzles puzzles = new Puzzles();
+		//		Puzzles puzzles = new Puzzles();
 		try
 		{
 			puzzles.loadPuzzle();
@@ -59,7 +59,6 @@ public class PuzzleWindow implements ActionListener
 		window.add(inputText,BorderLayout.SOUTH);
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
-		++index;
 	}
 
 	/* (non-Javadoc)
@@ -72,6 +71,7 @@ public class PuzzleWindow implements ActionListener
 		if(e.getSource() == solveButton)
 		{
 			String userAnswer;
+			answer = puzzles.getSolution(index);
 			userAnswer = inputText.getText();
 			if(userAnswer.equals(answer))
 			{
@@ -81,12 +81,12 @@ public class PuzzleWindow implements ActionListener
 			{
 				outputText.setText("Incorrect");
 			}
-			
+
 		}
 		if(e.getSource() == hintButton)
 		{
 			outputText.setText(puzzles.getHint(index));
 		}
-		
+
 	}
 }
