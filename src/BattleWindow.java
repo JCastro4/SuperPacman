@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -20,20 +21,28 @@ public class BattleWindow implements ActionListener
 	JButton examineButton = new JButton("Examine");
 	JButton useItemButton = new JButton("Use item");
 	JPanel subPanel = new JPanel();
+	
+	JPanel ghostPanel = new JPanel();
+	JLabel ghostHealth;
 
-	public BattleWindow()
+	public BattleWindow(Ghost ghost)
 	{
 		window.setSize(500, 690);
 		panel.setLayout(new BorderLayout());
 		attackButton.addActionListener(this);
-		//ghostInfo 
 		window.add(panel);
+		//ghostInfo
+		ghostHealth = new JLabel("Health: " + );
+		
+		
 		subPanel.add(attackButton);
 	    subPanel.add(fleeButton);
 	    subPanel.add(examineButton);
 	    subPanel.add(useItemButton); 
+	    panel.add(subPanel, BorderLayout.SOUTH);
 	    
-	    panel.add(subPanel, BorderLayout.PAGE_END);
+	    
+	    
 	    window.setVisible(true);
 	    
 	}

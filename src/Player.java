@@ -33,7 +33,8 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
-			BattleWindow battleWindow = new BattleWindow();
+			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(clyde);
 		}
 	}
 
@@ -53,7 +54,8 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
-			BattleWindow battleWindow = new BattleWindow();
+			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(clyde);
 		}
 	}
 
@@ -72,7 +74,8 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
-			BattleWindow battleWindow = new BattleWindow();
+			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(clyde);
 		}
 	}
 
@@ -93,7 +96,8 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
-			BattleWindow battleWindow = new BattleWindow();
+			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
+			BattleWindow battleWindow = new BattleWindow(clyde);
 		}
 	}
 
