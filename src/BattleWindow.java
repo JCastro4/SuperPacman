@@ -40,6 +40,7 @@ public class BattleWindow implements ActionListener
 		window.add(panel);
 		
 		//ghostInfo
+
 		ghostHealth = new JLabel("Health: " + ghost.getHealth());
 		ghostAttack = new JLabel("Attack Level: " + ghost.getAttack());
 		ghostDefence = new JLabel("Defence Level: " + ghost.getDefense());
