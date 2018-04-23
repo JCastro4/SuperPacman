@@ -81,7 +81,7 @@ public class BattleWindow implements ActionListener
 	    panel.add(subPanel, BorderLayout.SOUTH);
 	    
 	    
-	    
+	    window.setLocationRelativeTo(null);
 	    window.setVisible(true);
 	    
 	}
