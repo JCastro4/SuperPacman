@@ -113,14 +113,17 @@ public class BattleWindow implements ActionListener
 			}
 			Ghost.setHealth((int)(Ghost.getHealth() - (20 * .25)));
 			ghostHealth.setText("<html><font color='white'>Health: " + Integer.toString(Ghost.getHealth()) + "</font></html>");
-			System.out.println("attack");
+			//			System.out.println("attack");
 		}
 
 		if (e.getSource() == examineButton)
 		{
-			try {
+			try 
+			{
 				Ghost.loadGhost();
-			} catch (IOException e1) {
+			} 
+			catch (IOException e1) 
+			{
 				e1.printStackTrace();
 			}
 		}

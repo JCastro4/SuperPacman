@@ -110,9 +110,9 @@ public class Puzzles {
 			solutionList.add(puzzleList.remove(i));
 		}
 		while(!puzzleList.isEmpty());
-		System.out.println("puzzles " + puzzles);
-		System.out.println("hintList " + hintList);
-		System.out.println("solutionList " + solutionList);
+//		System.out.println("puzzles " + puzzles);
+//		System.out.println("hintList " + hintList);
+//		System.out.println("solutionList " + solutionList);
 		//	while(br.readLine() != null);
 
 		in.close();

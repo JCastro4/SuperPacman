@@ -30,7 +30,7 @@ public class MainMenu
 	int menuWidth = 100; //Width of each button/item on display
 	int menuHeight = 30;//Height of each button/item on display
 	int menuY = 460; //Button/item location on display
-//	int WIDTH = 490;
+	//	int WIDTH = 490;
 	int WIDTH = 600;
 	int HEIGHT = 550;
 
@@ -60,9 +60,12 @@ public class MainMenu
 			{
 				new Maze(levelList.getSelectedItem().toString());
 				Menu.setVisible(false);
-				try {
+				try 
+				{
 					Music.music();
-				} catch (IOException e) {
+				} 
+				catch (IOException e) 
+				{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -85,6 +88,15 @@ public class MainMenu
 				Maze.loadGame = true; 
 				new Maze(levelList.getSelectedItem().toString());
 				Menu.setVisible(false);
+				try 
+				{
+					Music.music();
+				} 
+				catch (IOException e) 
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 		});	

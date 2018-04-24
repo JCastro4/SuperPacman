@@ -262,7 +262,7 @@ public class Maze extends JFrame implements ActionListener, KeyListener
 					}
 				}
 				maze.add(tile);
-				System.out.println("Orbs on map = " + tmpOrbCount);
+//				System.out.println("Orbs on map = " + tmpOrbCount);
 			}
 		}
 
