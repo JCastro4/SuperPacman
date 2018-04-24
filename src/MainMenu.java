@@ -23,7 +23,7 @@ public class MainMenu
 	JButton Exit = new JButton("Exit");
 	JButton Load = new JButton("Load");
 	JButton MapMaker = new JButton("Map Maker");
-	ImageIcon picture = new ImageIcon("res/Images/MazePicture.png");
+	ImageIcon picture = new ImageIcon("SuperPacManPic.PNG");
 	JLabel imageLabel = new JLabel(picture);
 	ArrayList<String> mapList = new ArrayList<String>();
 	JComboBox<String> levelList;
@@ -137,7 +137,7 @@ public class MainMenu
 		});
 
 		//Display Picture
-		imageLabel.setBounds((WIDTH-412)/2, 25, 412, 412);
+		imageLabel.setBounds(0, 0, 600, 575);
 		imageLabel.setVisible(true);
 		Menu.add(imageLabel);
 		Menu.setVisible(true);
