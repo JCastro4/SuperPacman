@@ -2,6 +2,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -59,6 +60,13 @@ public class MainMenu
 			{
 				new Maze(levelList.getSelectedItem().toString());
 				Menu.setVisible(false);
+				try {
+					Music.music();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 			}
 
 		});	
