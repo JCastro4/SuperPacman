@@ -36,7 +36,7 @@ public class PuzzleWindow implements ActionListener
 	String puzzle;
 	String hint;
 	String answer;
-	static int index = 0;
+	static int index = -1;
 	Puzzles puzzles = new Puzzles();
 	public PuzzleWindow()
 	{
@@ -86,7 +86,7 @@ public class PuzzleWindow implements ActionListener
 			String userAnswer;
 			answer = puzzles.getSolution(index);
 			userAnswer = inputText.getText();
-			if(userAnswer.equals(answer))
+			if(userAnswer.equalsIgnoreCase(answer))
 			{
 				outputText.setText("Correct");
 				JOptionPane.showMessageDialog(null, "Congratulations, you answered correctly ", "Continue game!", JOptionPane.INFORMATION_MESSAGE);
