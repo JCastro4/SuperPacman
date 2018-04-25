@@ -58,31 +58,37 @@ public class Player extends Person
 		}
 		if(Maze.map[x][y] == 4)
 		{
+			BattleWindow.indexGhost = 0;
 			Ghost pinky = new Ghost("Pinky", "Pink", "description", 100, 80, 60, 50/50);
 			BattleWindow battleWindow = new BattleWindow(pinky, this);
 		}
 		else if (Maze.map[x][y] == 5)
 		{
+			BattleWindow.indexGhost = 1;
 			Ghost blinky = new Ghost("Blinky", "red", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(blinky, this);
 		}
 		else if (Maze.map[x][y] == 6)
 		{
+			BattleWindow.indexGhost = 3;
 			Ghost inky = new Ghost("Inky", "cyan", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(inky, this);
 		}
 		else if (Maze.map[x][y] == 7)
 		{
+			BattleWindow.indexGhost = 4;
 			Ghost clyde = new Ghost("Clyde", "orange", "description", 75, 60, 40, 40/60);
 			BattleWindow battleWindow = new BattleWindow(clyde, this);
 		}
 		else if (Maze.map[x][y] == 8)
 		{
+			BattleWindow.indexGhost = 5;
 			Ghost blueGhost1 = new Ghost("Blue Ghost 1", "blue", "description", 50, 50, 30, 30/70);
 			BattleWindow battleWindow = new BattleWindow(blueGhost1, this);
 		}
 		else if (Maze.map[x][y] == 9)
 		{
+			BattleWindow.indexGhost = 6;
 			Ghost blueGhost2 = new Ghost("Blue Ghost 2", "blue", "description", 50, 50, 30, 30/70);
 			BattleWindow battleWindow = new BattleWindow(blueGhost2, this);
 		}

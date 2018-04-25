@@ -20,7 +20,7 @@ public class BattleWindow implements ActionListener
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
 	JPanel ghostStats = new JPanel();
-	JTextField ghostsInfo = new JTextField();
+	JTextField outputText = new JTextField();
 	JButton attackButton = new JButton("Attack");
 	JButton fleeButton = new JButton("Flee");
 	JButton examineButton = new JButton("Examine");
@@ -30,12 +30,23 @@ public class BattleWindow implements ActionListener
 	JPanel ghostPanel = new JPanel();
 	JPanel playerPanel = new JPanel();
 	JLabel ghostHealth, ghostAttack, ghostDefence, ghostAccuracy, playerHealth, playerAttack, playerDefence, title;
-
+	static int indexGhost = 0;
 	public BattleWindow(Ghost ghost, Player player)
 	{
-		window.setSize(700, 500);
+		try
+		{
+			Ghost.loadGhost();
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		window.setSize(700, 700);
 		panel.setLayout(new BorderLayout());
 		attackButton.addActionListener(this);
+		examineButton.addActionListener(this);
+		fleeButton.addActionListener(this);
 		window.add(panel);
 
 		// ghostInfo
@@ -43,7 +54,7 @@ public class BattleWindow implements ActionListener
 		ghostHealth = new JLabel("<html><font color='white'>Health: " + ghost.getHealth() + "</font></html>");
 		ghostAttack = new JLabel("<html><font color='white'>Attack Level: " + ghost.getAttack() + "</font></html>");
 		ghostDefence = new JLabel("<html><font color='white'>Defence Level: " + ghost.getDefense() + "</font></html>");
-		ghostAccuracy = new JLabel("<html><font color='white'>Accuracy: " + ghost.getAccuracy() + "</font></html>");
+		ghostAccuracy = new JLabel("<html><font color='white'>Accuracy: " + ghost.getAccuracy(indexGhost) + "</font></html>");
 
 		GridLayout gridLayout = new GridLayout(4, 1);
 		ghostPanel.setLayout(gridLayout);
@@ -89,6 +100,7 @@ public class BattleWindow implements ActionListener
 
 		subPanel.setBackground(Color.DARK_GRAY);
 		panel.setBackground(Color.DARK_GRAY);
+		window.add(outputText, BorderLayout.SOUTH);
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
 
@@ -118,15 +130,18 @@ public class BattleWindow implements ActionListener
 
 		if (e.getSource() == examineButton)
 		{
-			try {
-				Ghost.loadGhost();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
+			outputText.setText(Ghost.getGhostName(indexGhost) + 
+			Ghost.getGhostColor(indexGhost) +
+			Ghost.getGhostDescription(indexGhost)); 
+//			+ Ghost.getGhostHP(indexGhost)
+//			+ Ghost.getGhostAttack(indexGhost) + Ghost.getGhostAccuracy(indexGhost)
+//			+ Ghost.getDefense(indexGhost));
+//			
+//			HPList.add(ghostList.remove(i));
+//			attackList.add(ghostList.remove(i));
+//			accuracyList.add(ghostList.remove(i));
+//			defenseList.add(ghostList.remove(i));
+			
 		}
-
-
-	
-
-}
+	}
 }

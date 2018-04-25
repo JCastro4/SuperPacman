@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+import com.sun.beans.editors.IntegerEditor;
 
 /**
  * Class: Puzzles
@@ -26,16 +29,34 @@ import java.io.InputStreamReader;
  * Each Ghost has a name, color, description, health, attack, defense, and accuracy.
  */
 
+/* Example text file input to reference.
+ * Name: Pinky	
+Color: Pink		
+Description: A boss ghost that can attack user's life points as well as his/her attack, defense.	
+HP: 100 
+Accuracy: 50/50 chance of hit 
+Attack: 80 
+Defense:60
+ */
+
 @SuppressWarnings("serial")
 public class Ghost extends Person
 {
 	private int accuracy;
-//	private String color;
-//	private String description;
-//	Player player = new Player();
+	//	private String color;
+	//	private String description;
+	//	Player player = new Player();
 	private String color;
 	private String description;
-	
+	static ArrayList<String> ghostList = new ArrayList<>();
+	static ArrayList<String> nameList = new ArrayList<>();
+	static ArrayList<String> colorList = new ArrayList<>();
+	static ArrayList<String> descriptionList = new ArrayList<>();
+	static ArrayList<String> HPList = new ArrayList<>();
+	static ArrayList<String> attackList = new ArrayList<>();
+	static ArrayList<String> accuracyList = new ArrayList<>();
+	static ArrayList<String> defenseList = new ArrayList<>();
+
 	public Ghost()
 	{
 		//empty constructor
@@ -50,14 +71,43 @@ public class Ghost extends Person
 		this.setDefense(defense);
 		this.setAccuracy(accuracy);
 	}
+	public static String getGhostName(int indexGhost)
+	{
+		return nameList.get(indexGhost);
+	}
+	public static String getGhostDescription(int indexGhost)
+	{
+		return descriptionList.get(indexGhost);
+	}
+	public static int getDefense(int indexGhost)
+	{
+		return Integer.parseInt(defenseList.get(indexGhost));
+	}
+	public static  String getGhostColor(int indexGhost)
+	{
+		return colorList.get(indexGhost);
+	}
 
 	/**
 	 * @return the accuracy
 	 */
-	public int getAccuracy()
+	public double getAccuracy(int indexGhost)
 	{
-		return accuracy;
+		return Double.parseDouble((accuracyList.get(indexGhost)));
 	}
+	public static int getGhostHP(int indexGhost)
+	{
+		return Integer.parseInt(HPList.get(indexGhost));
+	}
+	public static int getGhostAttack(int indexGhost)
+	{
+		return Integer.parseInt(attackList.get(indexGhost));
+	}
+	public static int getGhostAccuracy(int indexGhost)
+	{
+		return Integer.parseInt(accuracyList.get(indexGhost));
+	}
+	
 
 	/**
 	 * @param accuracy the accuracy to set
@@ -74,7 +124,7 @@ public class Ghost extends Person
 	public void attack()
 	{
 		dealDamage(getAttack());
-		
+
 	}
 
 	/* (non-Javadoc)
@@ -84,18 +134,18 @@ public class Ghost extends Person
 	public void dealDamage(int attack)
 	{
 		Player.setHealth(Player.getHealth() - attack );
-		
+
 	}
 
 	/* (non-Javadoc)
 	 * @see Person#receiveDamage()
 	 */
-//	@Override
-//	public void receiveDamage()
-//	{
-//		// TODO Auto-generated method stub
-//		
-//	}
+	//	@Override
+	//	public void receiveDamage()
+	//	{
+	//		// TODO Auto-generated method stub
+	//		
+	//	}
 	public void createGhosts() // Create Ghosts needed
 	{
 		Ghost Clyde = new Ghost("Clyde", "orange", description, 75, 60, 40, 40/60);
@@ -107,104 +157,50 @@ public class Ghost extends Person
 		Ghost ghost2 = new Ghost("ghost2", "blue", color, 50, 50, 30, 30/70);
 		Ghost ghost3 = new Ghost("ghost3", "blue", color, 50, 50, 30, 30/70);
 		Ghost ghost4 = new Ghost("ghost4", "blue", color, 50, 50, 30, 30/70);
-		
+
 	}
-	
-	
-	
+
+
+
 	public static void loadGhost() throws IOException
 	{
-		
-	
-	
-  /*   monster = "Monster.txt";
 
-    // This will reference one line at a time
-    String line = null;
+		// Set file name & path     
+		String monster = "Monster.txt";
 
-    try {
-        // FileReader reads text files 
-        FileReader fileReader = new FileReader(monster);
+		// Read in file
+		FileInputStream in = new FileInputStream(monster);
+		BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
-       
-        BufferedReader bufferedReader =  new BufferedReader(fileReader);
 
-        while((line = bufferedReader.readLine()) != null) {  
-            System.out.println(line);
-        }   
-
-        // Always close files.
-        bufferedReader.close();         
-    }
-    catch(FileNotFoundException ex) {
-        System.out.println("Unable to open file '" + monster + "'");                
-    }
-    catch(IOException ex) {
-        System.out.println( "Error reading file '"  + monster + "'");                  
-       
-    }
+		// Declare Array which will hold lines               
+		//	ArrayList<String> list = new ArrayList<>();
+		//	myarray = new String[175];
+		String line;		 
+		// Read each line into the array            
+		while((line = br.readLine()) != null)
+		{
+			ghostList.add(line);
 		}
-	}
-*/
-	//	public static void main(String[] args) throws Exception {
-			 
-			// Set file name & path     
-			String filepath = "Monster.txt";
-			         
-			// Read in file
-			FileInputStream in = new FileInputStream(filepath);
-			BufferedReader br = new BufferedReader(new InputStreamReader(in));
-			
-			 
-			// Declare Array which will hold lines               
-			String[] myarray;
-			myarray = new String[175];
-			 
-			// Read each line into the array            
-			for (int i = 0; i < myarray.length; i++){
-			myarray[i] = br.readLine();
-			}
-			 
-			in.close();
-			
-			//This line will show lines 1-8 
-			//Currently only prints one line at a time 
-			//This currently will print each of the ghosts information. 
-			//I was thinking we could call this information based on the location of the ghost in the maze. 
-			
-			
-			//Pinky 
-			System.out.println(myarray[1].replace("\"", "")+ '\n' + myarray[2].replace("\"", "")+'\n' + myarray[3].replace("\"", "")+'\n'+ myarray[4].replace("\"","")
-				+'\n'	+ myarray[5].replace("\"", "")+'\n' + myarray[6].replace("\"", "")+ '\n' +myarray[7].replace("\"", "")+'\n' + myarray[8].replace("\"", "")+'\n');
-			
-			//Blinky
-			System.out.println(myarray[10].replace("\"", "")+ '\n' + myarray[11].replace("\"", "")+'\n' + myarray[12].replace("\"", "")+'\n'+ myarray[13].replace("\"","")
-					+'\n'	+ myarray[14].replace("\"", "")+'\n' + myarray[15].replace("\"", "")+'\n' + myarray[16].replace("\"", "")+'\n' + myarray[17].replace("\"", "")+'\n');
-		
-			//Inky
-			System.out.println(myarray[19].replace("\"", "")+ '\n' + myarray[20].replace("\"", "")+'\n' + myarray[21].replace("\"", "")+'\n'+ myarray[22].replace("\"","")
-					+'\n'	+ myarray[23].replace("\"", "")+'\n' + myarray[24].replace("\"", "")+'\n' + myarray[25].replace("\"", "")+'\n' + myarray[26].replace("\"", "")+'\n');
-			
-			//Clyde
-			System.out.println(myarray[28].replace("\"", "")+ '\n' + myarray[29].replace("\"", "")+'\n' + myarray[30].replace("\"", "")+'\n'+ myarray[31].replace("\"","")
-					+'\n'	+ myarray[32].replace("\"", "")+'\n' + myarray[33].replace("\"", "")+'\n' + myarray[34].replace("\"", "")+'\n' + myarray[35].replace("\"", "")+'\n');
-			
-			//Blue Ghost 1
-			System.out.println(myarray[36].replace("\"", "")+ '\n' + myarray[37].replace("\"", "")+'\n' + myarray[38].replace("\"", "")+'\n'+ myarray[39].replace("\"","")
-					+'\n'	+ myarray[40].replace("\"", "")+'\n' + myarray[41].replace("\"", "")+'\n' + myarray[42].replace("\"", "")+'\n' + myarray[43].replace("\"", "")+'\n');
+		int i = 0;
+		do
+		{
+			nameList.add(ghostList.remove(i));
+			colorList.add(ghostList.remove(i));
+			descriptionList.add(ghostList.remove(i));
+			HPList.add(ghostList.remove(i));
+			attackList.add(ghostList.remove(i));
+			accuracyList.add(ghostList.remove(i));
+			defenseList.add(ghostList.remove(i));
 
-			//Blue Ghost 2
-			System.out.println(myarray[45].replace("\"", "")+ '\n' + myarray[46].replace("\"", "")+'\n' + myarray[47].replace("\"", "")+'\n'+ myarray[48].replace("\"","")
-					+'\n'	+ myarray[49].replace("\"", "")+'\n' + myarray[50].replace("\"", "")+'\n' + myarray[51].replace("\"", "")+'\n' + myarray[52].replace("\"", "")+'\n');
-			
-			//Blue Ghost 3 
-			System.out.println(myarray[53].replace("\"", "")+ '\n' + myarray[54].replace("\"", "")+'\n' + myarray[55].replace("\"", "")+'\n'+ myarray[56].replace("\"","")
-					+'\n'	+ myarray[57].replace("\"", "")+'\n' + myarray[58].replace("\"", "")+'\n' + myarray[59].replace("\"", "")+'\n' + myarray[60].replace("\"", "")+'\n');
-			
-			//Blue Ghost 4
-			System.out.println(myarray[62].replace("\"", "")+ '\n' + myarray[63].replace("\"", "")+'\n' + myarray[64].replace("\"", "")+'\n'+ myarray[65].replace("\"","")
-					+'\n'	+ myarray[66].replace("\"", "")+'\n' + myarray[67].replace("\"", "")+'\n' + myarray[68].replace("\"", "")+'\n' + myarray[69].replace("\"", "")+'\n');
-			
 		}
+		while(!ghostList.isEmpty());
+		//		System.out.println("puzzles " + puzzles);
+		//		System.out.println("hintList " + hintList);
+		//		System.out.println("solutionList " + solutionList);
+		//	while(br.readLine() != null);
+
+		in.close();
 	}
-	
+}
+
