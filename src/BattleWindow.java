@@ -123,9 +123,8 @@ public class BattleWindow implements ActionListener
 				JOptionPane.showMessageDialog(null, "You defeated the ghost", "Continue game!", JOptionPane.INFORMATION_MESSAGE);
 				window.dispose();//closes window
 			}
-			Ghost.setHealth((int)(Ghost.getHealth() - (20 * .25)));
+			Ghost.setHealth((int)(Ghost.getHealth() - (Player.attack * .25)));
 			ghostHealth.setText("<html><font color='white'>Health: " + Integer.toString(Ghost.getHealth()) + "</font></html>");
-			System.out.println("attack");
 		}
 
 		if (e.getSource() == examineButton)

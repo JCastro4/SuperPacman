@@ -55,6 +55,8 @@ public class Player extends Person
 			Maze.map[x][y] = 1;
 			Maze.orbCount ++;
 			autoPickupItems(Maze.map[x][y]);
+			Player.attack++;
+			Maze.attackLabel.setText("Attack: " + Player.attack);
 		}
 		if(Maze.map[x][y] == 4)
 		{
@@ -112,7 +114,9 @@ public class Player extends Person
 		{
 			Maze.map[x][y] = 1;
 			Maze.orbCount ++;
+			Player.attack++;
 			autoPickupItems(Maze.map[x][y]);
+			Maze.attackLabel.setText("Attack: " + Player.attack);
 		}
 		if(Maze.map[x][y] == 4)
 		{
@@ -162,6 +166,8 @@ public class Player extends Person
 			Maze.map[x][y] = 1;
 			Maze.orbCount ++;
 			autoPickupItems(Maze.map[x][y]);
+			Player.attack++;
+			Maze.attackLabel.setText("Attack: " + Player.attack);
 		}
 		if(Maze.map[x][y] == 4)
 		{
@@ -211,7 +217,8 @@ public class Player extends Person
 				Maze.map[x][y] = 1;
 				Maze.orbCount ++;
 				autoPickupItems(Maze.map[x][y]);
-
+				Player.attack++;
+				Maze.attackLabel.setText("Attack: " + Player.attack);
 			}
 		}
 		if(Maze.map[x][y] == 4)
