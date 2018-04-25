@@ -44,7 +44,7 @@ public class Player extends Person
 				|| (x > 0 && Maze.map[x - 1][y] == 3) || (x > 0 && Maze.map[x - 1][y] == 4)
 				|| (x > 0 && Maze.map[x - 1][y] == 5) || (x > 0 && Maze.map[x - 1][y] == 6)
 				|| (x > 0 && Maze.map[x - 1][y] == 7) || (x > 0 && Maze.map[x - 1][y] == 8)
-				|| (x > 0 && Maze.map[x - 1][y] == 9));
+				|| (x > 0 && Maze.map[x - 1][y] == 9))
 		{
 			this.setLocation(this.getX() - 10, this.getY());
 			x--;
@@ -95,8 +95,6 @@ public class Player extends Person
 			Ghost blueGhost2 = new Ghost("Blue Ghost 2", "blue", "description", 50, 50, 30, 30/70);
 			BattleWindow battleWindow = new BattleWindow(blueGhost2, this);
 		}
-
-
 	}
 
 	public void moveRight() 
