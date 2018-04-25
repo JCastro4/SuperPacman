@@ -95,6 +95,8 @@ public class PuzzleWindow implements ActionListener
 			else
 			{
 				outputText.setText("Incorrect");
+				System.out.println(userAnswer);
+				System.out.println("The correct answer is: " + answer);
 			}
 
 		}
@@ -102,6 +104,7 @@ public class PuzzleWindow implements ActionListener
 		{
 			outputText.setText(puzzles.getHint(index));
 		}
+
 
 	}
 }
