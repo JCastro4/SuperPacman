@@ -143,5 +143,9 @@ public class BattleWindow implements ActionListener
 //			defenseList.add(ghostList.remove(i));
 			
 		}
+		if(e.getSource() == fleeButton)
+		{
+			window.dispose();
+		}
 	}
 }
