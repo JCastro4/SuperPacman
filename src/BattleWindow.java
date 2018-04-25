@@ -106,7 +106,7 @@ public class BattleWindow implements ActionListener
 		// TODO Auto-generated method stub
 		if (e.getSource() == attackButton)
 		{
-			if(Ghost.getHealth() < 0)
+			if(Ghost.getHealth() <= 0)
 			{
 				JOptionPane.showMessageDialog(null, "You defeated the ghost", "Continue game!", JOptionPane.INFORMATION_MESSAGE);
 				window.dispose();//closes window
