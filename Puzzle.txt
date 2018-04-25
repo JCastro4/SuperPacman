@@ -1,4 +1,4 @@
-Description: What’s red and smells like blue paint?
+Description: What's red and smells like blue paint?
 Hint: Not Blood; Red *****	
 Red Paint
 Description: What do you call an alligator in a vest?	
@@ -7,28 +7,28 @@ An investigator
 Description: How does Moses make his tea?	
 Hint: 58th book of the Bible, 19th book of the New Testament	
 Hebrews it
-Description: What’s the difference between an oral thermometer and a rectal thermometer?	
+Description: What's the difference between an oral thermometer and a rectal thermometer?	
 Hint: One of the five senses	
 The taste
 Description: How many tickles does it take to make an octopus laugh?	
 Hint: hexagon, heptagon, octagon, nonagon,****gon.	
 Ten tickles
 Description: What do you get when you cross a caterpillar and a parrot?	
-Hint: You put this device to your head and say “10-4” and/or “Roger that”	
+Hint: You put this device to your head and say "10-4" and/or "Roger that"	
 A walkie talkie
 Description: What room do ghosts avoid?	
 Hint: Not the bedroom, dining room...	
 The living room
-Description: David’s father has three sons: Snap, crackle,	?	
-Hint: David’s father	
+Description: David's father has three sons: Snap, crackle,	?	
+Hint: David's father	
 David
 Description: What goes up but never comes down?	
 Hint: Birthday	
 Your age
-Description: What starts with “P” and ends with “E” and has more than 1000 letters?	
+Description: What starts with "P" and ends with "E" and has more than 1000 letters?	
 Hint: USPS	
 A post office
-Description: What starts with the letter “T”, is filled with “T”, and ends in “T”?	
+Description: What starts with the letter "T", is filled with "T", and ends in "T"?	
 Hint: nursery rhyme	
 A teapot
 Description: What does a snowman like to eat for breakfast?	
@@ -49,7 +49,7 @@ A Doughnut
 Description: What do you get when you cross a porcupine and a turtle?	
 Hint: Pokemon	
 A Slowpoke
-Description: What’s light as a feather, but so heavy that the world’s strongest man cannot lift it?	
+Description: What's light as a feather, but so heavy that the worldï¿½s strongest man cannot lift it?	
 Hint: g = 9.80665 m/s^2	
 Gravity
 Description: Which is the most Curious letter?	
