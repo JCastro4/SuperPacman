@@ -1,72 +1,72 @@
 Description: What’s red and smells like blue paint?
 Hint: Not Blood; Red *****	
-Solution: Red Paint.
+Red Paint
 Description: What do you call an alligator in a vest?	
 Hint: Crime Solver	
-Solution: An investigator.
+An investigator
 Description: How does Moses make his tea?	
 Hint: 58th book of the Bible, 19th book of the New Testament	
-Solution: Hebrews it.
+Hebrews it
 Description: What’s the difference between an oral thermometer and a rectal thermometer?	
 Hint: One of the five senses	
-Solution: The taste.
+The taste
 Description: How many tickles does it take to make an octopus laugh?	
 Hint: hexagon, heptagon, octagon, nonagon,****gon.	
-Solution: Ten tickles
+Ten tickles
 Description: What do you get when you cross a caterpillar and a parrot?	
 Hint: You put this device to your head and say “10-4” and/or “Roger that”	
-Solution: A walkie talkie.
+A walkie talkie
 Description: What room do ghosts avoid?	
 Hint: Not the bedroom, dining room...	
-Solution: The living room.
+The living room
 Description: David’s father has three sons: Snap, crackle,	?	
 Hint: David’s father	
-Solution: David.
+David
 Description: What goes up but never comes down?	
 Hint: Birthday	
-Solution: Your age.
+Your age
 Description: What starts with “P” and ends with “E” and has more than 1000 letters?	
 Hint: USPS	
-Solution: A post office.
+A post office
 Description: What starts with the letter “T”, is filled with “T”, and ends in “T”?	
 Hint: nursery rhyme	
-Solution: A teapot.
+A teapot
 Description: What does a snowman like to eat for breakfast?	
 Hint: Cereal	
-Solution: Frosted Flakes.
+Frosted Flakes
 Description: This is needed both for courage and a hardcover book.	
 Hint: All humans have one	
-Solution: A Spine.
+A Spine
 Description: What does no man want, yet no man wants to lose?	
 Hint: Provides money	
-Solution: His job.
+His job
 Description: What animal always asks but never answers?	
 Hint: A bird	
-Solution: An owl.
+An owl
 Description: What kind of nut has no shell?	
 Hint: Dunkin ~	
-Solution: A Doughnut.
+A Doughnut
 Description: What do you get when you cross a porcupine and a turtle?	
 Hint: Pokemon	
-Solution: A Slowpoke.
+A Slowpoke
 Description: What’s light as a feather, but so heavy that the world’s strongest man cannot lift it?	
 Hint: g = 9.80665 m/s^2	
-Solution: Gravity
+Gravity
 Description: Which is the most Curious letter?	
 Hint: Why?	
-Solution: Y
+Y
 Description: What word begins and ends with an E, but only has one letter?	
 Hint: Used to enclosed a letter	
-Solution: Envelope
+Envelope
 Description: What is a gate that you can never get in?	
 Hint: Toothpaste	
-Solution: Colgate
+Colgate
 Description: What do you call a bear without an ear?	
 Hint: A letter	
-Solution: B
+B
 Description: If you are running in a race and you pass the second place person, what place are you in?	
 Hint: Number: 47 Name: Ag Mass: 107.8682	
-Solution: Second place
+Second place
 Description: I can be made, I can be played. I can be cracked, I can be told. What am I?	
 Hint: JK	
-Solution: A joke
+A joke
